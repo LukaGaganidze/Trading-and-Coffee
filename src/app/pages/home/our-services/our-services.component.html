@@ -1,0 +1,63 @@
+<!-- for background callor stretched -->
+<div class="services-container">
+  <!-- for width control -->
+  <div class="servicess-width-cntainer">
+    <!-- for content -->
+    <div class="service">
+      <h2>Our services</h2>
+
+      <div class="service__grid">
+        <div
+          (mouseenter)="onMouseenterImg1()"
+          (mouseleave)="onMouseLeaveImg1()"
+          class="service__one service__img"
+        >
+          <div [ngClass]="{ active: stateImg1 }" class="service__item-content">
+            <h5>Brokerage Services</h5>
+            <p>
+              Galt & Taggart is the largest brokerage house in Georgia, and one
+              of the leading in the region, that provides competitive...
+            </p>
+            <app-green-button [content]="'READ MORE'"></app-green-button>
+          </div>
+        </div>
+
+        <div
+          (mouseenter)="onMouseenterImg2()"
+          (mouseleave)="onMouseLeaveImg2()"
+          class="service__two service__img"
+        >
+          <div
+            [ngClass]="{ active: stateImg2 }"
+            class="service__item-content active"
+          >
+            <h5>Investment Banking</h5>
+            <p>
+              Galt & Taggart is the leading investment bank in Georgia, taking
+              part in the biggest deals...
+            </p>
+            <app-green-button [content]="'READ MORE'"></app-green-button>
+          </div>
+        </div>
+
+        <div
+          (mouseenter)="onMouseenterImg3()"
+          (mouseleave)="onMouseLeaveImg3()"
+          class="service__three service__img"
+        >
+          <div
+            [ngClass]="{ active: stateImg3 }"
+            class="service__item-content active"
+          >
+            <h5>Research</h5>
+            <p>
+              We give the opportunity to get acquainted in detail with the most
+              recent reports on macroeconomic and sectorial researches
+            </p>
+            <app-green-button [content]="'READ MORE'"></app-green-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+// $imput-color
+// $form-border-colod
+
+.card,
+.card:link,
+.card:visited {
+  display: block;
+  text-decoration: none;
+
+  & a,
+  & a:link,
+  & a:visited {
+    text-decoration: none;
+    color: a.$footer-link-color;
+  }
+}
+
+.card {
+  padding: 2rem;
+  border: a.$form-border-colod solid 1px;
+  border-radius: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: a.$blog-card-hover;
+  }
+
+  & img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+  }
+
+  & h3 {
+    margin-bottom: 2rem;
+    line-height: 24px;
+    height: 4rem;
+  }
+
+  & p {
+    margin-bottom: 2.5rem;
+    color: a.$imput-color;
+  }
+}

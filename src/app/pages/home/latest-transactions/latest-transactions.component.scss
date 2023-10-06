@@ -1,0 +1,20 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+.container {
+  padding-bottom: 8rem;
+  & h2 {
+    margin: 0 auto;
+    width: b.$container-default-wudth;
+    font-size: b.$font-size-heading;
+    margin-bottom: 3rem;
+  }
+}
+
+.cards-container {
+  margin: 0 auto;
+  width: b.$container-large-width;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 2rem;
+}

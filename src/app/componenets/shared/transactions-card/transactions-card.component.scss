@@ -1,0 +1,43 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+.card {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: solid a.$form-border-colod 1px;
+
+  & img:first-child {
+    width: 100%;
+    height: auto;
+  }
+
+  & div {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    & img {
+      width: 50%;
+    }
+    background-color: a.$text-color;
+    color: a.$main-color-white;
+    text-align: center;
+  }
+}
+
+.card-info {
+  background-color: a.$main-color-white-gradient !important;
+  color: a.$text-color !important;
+
+  & span:first-child {
+    font-size: b.$font-size-sub-heading;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  & span:last-child,
+  & span:nth-child(2) {
+    color: a.$imput-color;
+  }
+}

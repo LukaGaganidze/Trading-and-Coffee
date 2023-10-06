@@ -1,0 +1,32 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+.coantainer {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("../../../../assets/home/gt-info/cover-img.jpg");
+  background-attachment: fixed;
+  -webkit-background-attachment: scroll; /* Safari and Chrome */
+  -moz-background-attachment: scroll; /* Older versions of Firefox */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  width: b.$container-default-wudth;
+  margin: 0 auto;
+  padding: 10rem 0;
+  color: a.$main-color-white;
+
+  & h2 {
+    font-size: b.$font-size-heading;
+    margin-bottom: 5rem;
+  }
+
+  & p {
+    margin-bottom: 3rem;
+  }
+}

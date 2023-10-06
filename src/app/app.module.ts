@@ -14,6 +14,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { GreenButtonComponent } from './componenets/shared/green-button/green-button.component';
 import { LatestReportsComponent } from './pages/home/latest-reports/latest-reports.component';
 import { CardComponent } from './pages/home/latest-reports/card/card.component';
+import { OurServicesComponent } from './pages/home/our-services/our-services.component';
+import { TraderInfoComponent } from './pages/home/trader-info/trader-info.component';
+import { LatestBlogComponent } from './pages/home/latest-blog/latest-blog.component';
+import { BlogCardComponent } from './componenets/shared/blog-card/blog-card.component';
+import { TransactionsCardComponent } from './componenets/shared/transactions-card/transactions-card.component';
+import { LatestTransactionsComponent } from './pages/home/latest-transactions/latest-transactions.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +34,12 @@ import { CardComponent } from './pages/home/latest-reports/card/card.component';
     GreenButtonComponent,
     LatestReportsComponent,
     CardComponent,
+    OurServicesComponent,
+    TraderInfoComponent,
+    LatestBlogComponent,
+    BlogCardComponent,
+    TransactionsCardComponent,
+    LatestTransactionsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, CommonModule],
   providers: [],

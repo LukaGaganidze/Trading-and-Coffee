@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>LATEST FROM BLOG</h2>
+
+  <div class="card-container">
+    <app-blog-card
+      *ngFor="let blogCard of blogCardArray"
+      [blogItem]="blogCard"
+    ></app-blog-card>
+  </div>
+</div>

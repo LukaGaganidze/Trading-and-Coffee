@@ -1,8 +1,10 @@
 <div class="container-parent">
   <div class="container">
-    <h2>LATEST REPORTS</h2>
-
     <div class="latest-reports">
+      <div class="heading-box">
+        <h2>LATEST REPORTS</h2>
+        <a href="#">View All</a>
+      </div>
       <app-card *ngFor="let card of cardsArray" [card]="card"></app-card>
     </div>
   </div>
