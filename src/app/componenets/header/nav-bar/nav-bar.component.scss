@@ -1,0 +1,68 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+.container {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  align-content: center;
+  background-color: transparent;
+  padding: 4rem 0;
+
+  transition: all 0.5s;
+}
+
+.navbar {
+  width: b.$container-default-wudth;
+  margin: 0 auto;
+  color: #fff;
+  position: relative;
+  z-index: 100;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container.scrolled {
+  background-color: a.$headin-transparent-background;
+  padding: 2rem 0;
+}
+
+.main-logo {
+  width: 15rem;
+  height: max-content;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+
+  & a,
+  & a:link,
+  & a:visited {
+    color: a.$main-color-white;
+    text-decoration: none;
+    transition: all 0.2s ease-in;
+  }
+  & a:hover,
+  & a:active {
+    color: a.$imput-color;
+    text-decoration: none;
+  }
+}
+
+// both buttons
+.button-link-green,
+.button-link-white {
+  padding: 1.7rem 2rem;
+  border-radius: 0.5rem;
+}
+
+// white button
+.button-link-white,
+.button-link-white:link,
+.button-link-white:visited {
+  background-color: a.$main-color-white;
+  color: a.$text-color !important;
+}

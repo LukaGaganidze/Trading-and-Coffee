@@ -1,0 +1,9 @@
+<div class="container-parent">
+  <div class="container">
+    <h2>LATEST REPORTS</h2>
+
+    <div class="latest-reports">
+      <app-card *ngFor="let card of cardsArray" [card]="card"></app-card>
+    </div>
+  </div>
+</div>

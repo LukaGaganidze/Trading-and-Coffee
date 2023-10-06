@@ -1,0 +1,30 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+.container-parent {
+  transform: translateY(-8rem);
+  position: relative;
+}
+
+.container {
+  background-color: a.$text-color;
+  margin-left: calc(50% - 700px);
+  padding: 3rem 5rem;
+  border-radius: 2rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  & h2 {
+    font-size: b.$font-size-heading;
+    color: a.$main-color-white;
+  }
+}
+
+.latest-reports {
+  color: a.$main-color-white;
+  width: b.$container-default-wudth;
+  margin: 0 calc(50% + 700px) 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 3rem;
+}

@@ -1,0 +1,73 @@
+@use "../../../../global-styles/abstracts/colors" as a;
+@use "../../../../global-styles/base/index" as b;
+
+// MAIN CONTAINER
+.container {
+  background-color: a.$headin-transparent-background;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: b.$container-default-wudth;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+// INPUT BOX
+.input-box {
+  position: relative;
+
+  & input {
+    height: 3.5rem;
+    padding: 0 2rem 0 4rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    border: none;
+    background-color: a.$main-color-white;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.search-btn {
+  padding: 0.5rem;
+  height: 3rem;
+  width: 3rem;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+
+  &__svg {
+    border-radius: 100%;
+    cursor: pointer;
+    color: a.$imput-color;
+  }
+}
+
+//PHONE LINK
+.phone-link {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  gap: 1rem;
+
+  &__svg-box {
+    height: 2.3rem;
+    width: 2.3rem;
+  }
+}
+
+.phone-link:link,
+.phone-link:visited {
+  text-decoration: none;
+  color: a.$main-color-white;
+}

@@ -1,0 +1,27 @@
+<div [ngClass]="{ scrolled: wasScrolled }" class="container">
+  <nav class="navbar">
+    <a href="#" class="main-logo-link">
+      <img
+        class="main-logo"
+        src="../../../../assets/header/main-logo.png"
+        alt="logo of the project Coffee Coder Trading"
+      />
+    </a>
+
+    <ul class="links">
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Research</a></li>
+      <li><a href="#">Brokerage</a></li>
+      <li><a href="#">Inverstments</a></li>
+      <li><a href="#">Inverstment Banking</a></li>
+      <li><a href="#">Media</a></li>
+      <li>
+        <app-green-button
+          [linkTo]="'#'"
+          [content]="'SUBSCRIBE'"
+        ></app-green-button>
+      </li>
+      <li><a class="button-link-white" href="#">CLIENT LOGIN</a></li>
+    </ul>
+  </nav>
+</div>

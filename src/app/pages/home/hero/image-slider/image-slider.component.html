@@ -1,0 +1,74 @@
+<div
+  [ngStyle]="{
+    'background-image': getCurrentSlide()
+  }"
+  class="slider"
+>
+  <!-- content of the slider -->
+  <div class="slider__content">
+    <div class="slider__content__text">
+      <h2>{{ currentSlide.heading }}</h2>
+
+      <p>
+        {{ currentSlide.subHeading }}
+      </p>
+
+      <app-green-button
+        [linkTo]="'#'"
+        [content]="'LEARN MORE'"
+      ></app-green-button>
+    </div>
+
+    <!-- navigation buttons -->
+    <div class="nav-buttons">
+      <!-- arrow keft -->
+      <svg
+        (click)="toLeft()"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="arrow arrow-left"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5L8.25 12l7.5-7.5"
+        />
+      </svg>
+
+      <!-- arrow right -->
+      <svg
+        (click)="toRight()"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="arrow arrow-right"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5L8.25 12l7.5-7.5"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="dotsContainer"> -->
+<!-- <div
+    *ngFor="let slide of slides; let slideIndex = index"
+    class="dot"
+    (click)="goToSlide(slideIndex)"
+  >
+    ●
+  </div> -->
+<!-- </div> -->
+
+<!-- <div> -->
+<!-- <div (click)="goToPrevious()" class="leftArrow">❰</div> -->
+<!-- <div (click)="goToNext()" class="rightArrow">❱</div> -->
+<!-- </div> -->
