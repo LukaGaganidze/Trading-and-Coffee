@@ -1,5 +1,6 @@
 <div [ngClass]="{ scrolled: wasScrolled }" class="container">
   <nav class="navbar">
+    <!-- main logo -->
     <a href="#" class="main-logo-link">
       <img
         class="main-logo"
@@ -8,20 +9,237 @@
       />
     </a>
 
+    <!-- navigation links ul -->
     <ul class="links">
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Research</a></li>
-      <li><a href="#">Brokerage</a></li>
-      <li><a href="#">Inverstments</a></li>
-      <li><a href="#">Inverstment Banking</a></li>
-      <li><a href="#">Media</a></li>
+      <!-- about -->
+      <li
+        (mouseenter)="showDropdownAboutUs()"
+        (mouseleave)="hideDropdownAboutUs()"
+        class="nav-list"
+        [ngClass]="{ active: stateValueAboutUs }"
+      >
+        <!-- dropdown menu box -->
+        <ul class="drop-down">
+          <!-- triangle -->
+          <li class="triangle-box">
+            <div id="triangle"></div>
+          </li>
+
+          <!-- dropdown menu -->
+          <div class="drop-down__list-box">
+            <li>
+              <a href="#">What We Do</a>
+            </li>
+            <li>
+              <a href="#">Our Team</a>
+            </li>
+            <li>
+              <a href="#">Awards</a>
+            </li>
+          </div>
+        </ul>
+        <a href="#">About Us</a>
+      </li>
+
+      <!-- research -->
+      <li
+        class="nav-list"
+        (mouseenter)="showDropdownResearch()"
+        (mouseleave)="hideDropdownResearch()"
+        [ngClass]="{ active: stateValueResearch }"
+      >
+        <!-- dropdown menu box -->
+        <ul class="drop-down">
+          <!-- triangle -->
+          <li class="triangle-box">
+            <div id="triangle"></div>
+          </li>
+
+          <!-- dropdown menu -->
+          <div class="drop-down__list-box">
+            <li>
+              <a href="#">About Research</a>
+            </li>
+            <li>
+              <a href="#">Research Reports</a>
+            </li>
+          </div>
+        </ul>
+        <a href="#">Research</a>
+      </li>
+
+      <!-- brokerage -->
+      <li
+        class="nav-list"
+        (mouseenter)="showDropdownBrokerage()"
+        (mouseleave)="hideDropdownBrokerage()"
+        [ngClass]="{ active: stateValueBrokerage }"
+      >
+        <!-- dropdown menu box -->
+        <ul class="drop-down">
+          <!-- triangle -->
+          <li class="triangle-box">
+            <div id="triangle"></div>
+          </li>
+
+          <!-- dropdown menu -->
+          <div class="drop-down__list-box">
+            <li>
+              <a href="#">About Brokerage</a>
+            </li>
+            <li>
+              <a href="#">Service Agreements</a>
+            </li>
+          </div>
+        </ul>
+        <a href="#">Brokerage</a>
+      </li>
+
+      <!-- Investments -->
+      <li
+        class="nav-list"
+        (mouseenter)="showDropdownInverstments()"
+        (mouseleave)="hideDropdownInverstments()"
+        [ngClass]="{ active: stateValueInverstments }"
+      >
+        <!-- dropdown menu box -->
+        <ul class="drop-down">
+          <!-- triangle -->
+          <li class="triangle-box">
+            <div id="triangle"></div>
+          </li>
+
+          <!-- dropdown menu -->
+          <div class="drop-down__list-box">
+            <li>
+              <a href="#">About Inverstments</a>
+            </li>
+            <li>
+              <a href="#">E-books</a>
+            </li>
+            <li>
+              <a href="#">Coffee & trading Agreements</a>
+            </li>
+            <li>
+              <a href="#">Third party agreements</a>
+            </li>
+          </div>
+        </ul>
+        <a href="#">Inverstments</a>
+      </li>
+
+      <!-- Inverstments Banking -->
+      <li
+        class="nav-list"
+        (mouseenter)="showDropdownInverstmentsBanking()"
+        (mouseleave)="hideDropdownInverstmentsBanking()"
+        [ngClass]="{ active: stateValueInverstmentsBanking }"
+      >
+        <!-- dropdown menu box -->
+        <ul class="drop-down">
+          <!-- triangle -->
+          <li class="triangle-box">
+            <div id="triangle"></div>
+          </li>
+
+          <!-- dropdown menu -->
+          <div class="drop-down__list-box">
+            <li>
+              <a href="#">About Inverstments Banking</a>
+            </li>
+            <li>
+              <a href="#">Corporate Advisory</a>
+            </li>
+            <li>
+              <a href="#">Capital Markets</a>
+            </li>
+            <li>
+              <a href="#">Mezzanine Financing</a>
+            </li>
+            <li>
+              <a href="#">Transactions</a>
+            </li>
+          </div>
+        </ul>
+        <a href="#">Inverstment Banking</a>
+      </li>
+
+      <!-- Media -->
+      <li
+        class="nav-list"
+        (mouseenter)="showDropdownMedia()"
+        (mouseleave)="hideDropdownMedia()"
+        [ngClass]="{ active: stateValueMedia }"
+      >
+        <!-- dropdown menu box -->
+        <ul class="drop-down">
+          <!-- triangle -->
+          <li class="triangle-box">
+            <div id="triangle"></div>
+          </li>
+
+          <!-- dropdown menu -->
+          <div class="drop-down__list-box">
+            <li>
+              <a href="#">Press Releases</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+            <li>
+              <a href="#">C&T inMedia</a>
+            </li>
+          </div>
+        </ul>
+        <a href="#">Media</a>
+      </li>
+
+      <!-- green button -->
       <li>
         <app-green-button
           [linkTo]="'#'"
           [content]="'SUBSCRIBE'"
         ></app-green-button>
       </li>
-      <li><a class="button-link-white" href="#">CLIENT LOGIN</a></li>
+
+      <!-- white button -->
+      <li
+        (mouseenter)="showDropdownClientLogIn()"
+        (mouseleave)="hideDropdownClientLogIn()"
+        class="white-button-container nav-list"
+        [ngClass]="{ active: stateValueClientLogIn }"
+      >
+        <button class="white-button" href="#">
+          <span>CLIENT LOGIN</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="white-button-svg"
+            [ngClass]="{ 'white-button-svg__active': stateValueClientLogIn }"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </button>
+        <!-- dropdown menu box -->
+        <ul class="drop-down-btn">
+          <!-- dropdown menu -->
+          <div class="drop-down-btn__list-box">
+            <li>
+              <a href="#">TRADER</a>
+            </li>
+            <li>
+              <a href="#">DASHBOARD</a>
+            </li>
+          </div>
+        </ul>
+      </li>
     </ul>
   </nav>
 </div>

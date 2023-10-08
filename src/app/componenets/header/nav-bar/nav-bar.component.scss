@@ -1,6 +1,7 @@
 @use "../../../../global-styles/abstracts" as a;
 @use "../../../../global-styles/base" as b;
 
+// main container
 .container {
   width: 100%;
   background-color: transparent;
@@ -12,10 +13,11 @@
   transition: all 0.5s;
 }
 
+// navbar includes logo navigation links/sub links and buttons
 .navbar {
   width: b.$container-default-wudth;
   margin: 0 auto;
-  color: #fff;
+  color: a.$main-color-white;
   position: relative;
   z-index: 100;
   transition: all 0.3s;
@@ -23,16 +25,20 @@
   align-items: center;
   justify-content: space-between;
 }
+
+// container change on scroll
 .container.scrolled {
   background-color: a.$headin-transparent-background;
   padding: 2rem 0;
 }
 
+// main logo
 .main-logo {
   width: 15rem;
   height: max-content;
 }
 
+// navigation links
 .links {
   display: flex;
   align-items: center;
@@ -53,17 +59,161 @@
   }
 }
 
-// both buttons
-.button-link-green,
-.button-link-white {
-  padding: 1.7rem 2rem;
-  border-radius: 0.5rem;
-}
-
 // white button
-.button-link-white,
-.button-link-white:link,
-.button-link-white:visited {
+.white-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.3rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+
+  & .white-button-svg {
+    transition: all 0.4s;
+    transform: rotate(0deg);
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  & .white-button-svg.active {
+    transform: rotate(180deg);
+  }
+}
+.button-link-white {
   background-color: a.$main-color-white;
   color: a.$text-color !important;
+}
+
+// hover effect on links to add active class for sub links sytate management
+.links {
+  & .nav-list {
+    position: relative;
+
+    &.active {
+      .drop-down,
+      .drop-down-btn {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// dropdown sublinks
+.drop-down {
+  list-style: none;
+  position: absolute;
+  padding: 0;
+  left: 50%;
+  transform: translateY(1rem) translateX(-50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s;
+  transition-delay: 0.2s;
+
+  &__list-box {
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: a.$main-color-white;
+    border-radius: 0.2rem;
+    padding: 2rem;
+
+    & li:not(:last-child) {
+      padding: 0.5rem 0;
+      border-bottom: solid a.$form-border-colod 1px;
+    }
+
+    a,
+    & a:link,
+    & a:visited {
+      color: a.$footer-social-links-color;
+    }
+    & a:hover,
+    & a:active {
+      color: a.$text-color;
+    }
+  }
+}
+
+// triange box connecring sublinks and links
+.triangle-box {
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+// triangle
+#triangle {
+  background-color: a.$main-color-white;
+  width: 25px;
+  height: 15px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  position: absolute;
+}
+
+// dropdown sublinks for white button
+.drop-down-btn {
+  list-style: none;
+  position: absolute;
+  padding: 0;
+  left: 50%;
+  transform: translateY(-0.5rem) translateX(-50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s;
+  transition-delay: 0.2s;
+  text-align: center;
+  padding: 1rem 0 0 0;
+  z-index: -1;
+
+  &__list-box {
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: max-content;
+    list-style: none;
+    display: flex;
+    gap: 0.3rem;
+    border-radius: 0.2rem;
+
+    a,
+    & a:link,
+    & a:visited {
+      color: a.$footer-social-links-color;
+      padding: 1.5rem 2rem;
+      display: inline-block;
+      background-color: a.$nav-white-button-background-color;
+      width: 10rem;
+      border-radius: 0.5rem;
+      color: a.$main-color-white;
+      letter-spacing: 1px;
+      font-weight: 100;
+      font-size: 12px;
+    }
+    & a:hover,
+    & a:active {
+      color: a.$text-color;
+      color: a.$main-color-white;
+      background-color: rgba(
+        $color: a.$nav-white-button-background-color,
+        $alpha: 0.85
+      );
+    }
+  }
+}
+
+.white-button-svg {
+  transition: transform 0.4s;
+  &__active {
+    transform: rotate(180deg) !important;
+  }
 }
