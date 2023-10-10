@@ -1,0 +1,31 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+// card
+.award-item {
+  display: block;
+  padding: 1rem;
+  border-radius: 1rem;
+  // border: solid a.$form-border-colod 1.5px;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.15);
+  background-color: rgba($color: a.$form-border-colod, $alpha: 0.5);
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+    line-height: 23px;
+  }
+
+  & img {
+    width: 100%;
+    border-radius: 0.6rem;
+    margin-bottom: 2rem;
+    border: solid a.$form-border-colod 1.5px;
+  }
+
+  & p {
+    text-align: center;
+    color: a.$footer-social-links-color;
+    height: 7rem;
+  }
+}

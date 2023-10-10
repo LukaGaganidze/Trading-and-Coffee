@@ -1,1 +1,29 @@
-<p>contact-us-form works!</p>
+<form class="sub-form">
+  <h5>Contact Us</h5>
+  <!-- first name -->
+  <input placeholder="First Name" id="firstname" type="text" />
+
+  <!-- last name -->
+  <input placeholder="Last Name" id="lastName" type="text" />
+
+  <!-- email -->
+  <input placeholder="example@email.com" id="email" type="email" />
+
+  <!-- phone -->
+  <input
+    type="tel"
+    id="phone"
+    autocomplete="off"
+    name="phone"
+    placeholder="Phone"
+  />
+
+  <!-- industry -->
+  <select>
+    <option value="sample">Industry</option>
+    <option value="sample">Sample Industry</option>
+    <option value="other">Other</option>
+  </select>
+
+  <a class="button-link-green" routerLink="#">Submit</a>
+</form>

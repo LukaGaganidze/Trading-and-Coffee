@@ -1,0 +1,23 @@
+<div
+  [style.background-image]="
+    'linear-gradient(
+  to bottom,
+  rgb(0, 0, 0, 0.6),
+  rgb(0, 0, 0, 0.4)
+),url(' +
+    backgrounUrl +
+    ')'
+  "
+  class="about-hero"
+>
+  <div class="container">
+    <div class="content">
+      <ng-content></ng-content>
+      <app-green-button
+        *ngIf="buttonContent !== ''"
+        [content]="buttonContent"
+        [linkTo]="inputLink"
+      ></app-green-button>
+    </div>
+  </div>
+</div>

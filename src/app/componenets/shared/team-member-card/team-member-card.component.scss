@@ -1,0 +1,50 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+.card {
+  padding: 2rem;
+  border-radius: 1rem;
+  border: solid a.$form-border-colod 2px;
+
+  & img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  & svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  & *:link,
+  & *:visited {
+    text-decoration: none;
+    color: a.$footer-link-color;
+  }
+}
+
+.header {
+  text-transform: uppercase;
+  font-size: b.$font-size-sub-heading;
+  letter-spacing: 1px;
+  height: 2rem;
+  margin-bottom: 2rem;
+}
+
+.position {
+  color: a.$imput-color;
+  margin-bottom: 1.5rem;
+}
+
+.contact-link-box {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: max-content;
+  height: 2rem;
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}

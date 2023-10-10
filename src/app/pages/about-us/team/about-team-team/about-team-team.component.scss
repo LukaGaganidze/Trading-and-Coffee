@@ -1,0 +1,50 @@
+@use "../../../../../global-styles/abstracts" as a;
+@use "../../../../../global-styles/base" as b;
+
+.container {
+  width: b.$container-default-wudth;
+  margin: auto;
+  padding: 8rem 0;
+}
+.header-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  h2 {
+    font-size: b.$font-size-heading;
+  }
+}
+
+.category-box {
+  border: solid a.$form-border-colod 1px;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 14rem;
+  color: a.$imput-color;
+  border-radius: 0.6rem;
+
+  select {
+    border: none;
+    transform: translateX(-3px);
+    color: a.$text-color;
+    cursor: pointer;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  & span {
+    letter-spacing: 1px;
+  }
+}
+
+.team-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.5rem;
+}

@@ -1,1 +1,18 @@
-<p>hero works!</p>
+<!-- CONTROLLING HERO FROM OUTSIDE -->
+<!-- [backgrounUrl]= HERO BACKGROUND IMAGE -->
+<!-- [buttonContent]= GREEN BUTTON CONTENT, IF EXISTS STRING CONTENT IF NOT '' -->
+<!-- [inputLink]=  LINK TO WHERE THE BUTTON IS TAKING US -->
+
+<app-page-hero
+  [backgrounUrl]="'../../../../assets/about/landingPage/hero.jpg'"
+  [buttonContent]="'SUBSCRIBE FOR UPDATES'"
+  [inputLink]="'SUBSCRIBE FOR UPDATES'"
+>
+  <!-- content of the hero -->
+  <h2>What We Do</h2>
+  <p>
+    Professional knowledge, innovative decisions and the culture of individual
+    service . . . all that serves one goal – successful provision of the best
+    results for our customers
+  </p>
+</app-page-hero>

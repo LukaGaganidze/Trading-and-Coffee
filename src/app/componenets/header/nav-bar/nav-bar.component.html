@@ -1,7 +1,7 @@
 <div [ngClass]="{ scrolled: wasScrolled }" class="container">
   <nav class="navbar">
     <!-- main logo -->
-    <a href="#" class="main-logo-link">
+    <a routerLink="" class="main-logo-link">
       <img
         class="main-logo"
         src="../../../../assets/header/main-logo.png"
@@ -28,17 +28,17 @@
           <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
-              <a href="#">What We Do</a>
+              <a routerLink="about/what-we-do">What We Do</a>
             </li>
             <li>
-              <a href="#">Our Team</a>
+              <a routerLink="about/our-team">Our Team</a>
             </li>
             <li>
-              <a href="#">Awards</a>
+              <a routerLink="about/awards">Awards</a>
             </li>
           </div>
         </ul>
-        <a href="#">About Us</a>
+        <a routerLink="about">About Us</a>
       </li>
 
       <!-- research -->
@@ -58,14 +58,14 @@
           <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
-              <a href="#">About Research</a>
+              <a routerLink="#">About Research</a>
             </li>
             <li>
-              <a href="#">Research Reports</a>
+              <a routerLink="#">Research Reports</a>
             </li>
           </div>
         </ul>
-        <a href="#">Research</a>
+        <a routerLink="#">Research</a>
       </li>
 
       <!-- brokerage -->
@@ -85,14 +85,14 @@
           <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
-              <a href="#">About Brokerage</a>
+              <a routerLink="#">About Brokerage</a>
             </li>
             <li>
-              <a href="#">Service Agreements</a>
+              <a routerLink="#">Service Agreements</a>
             </li>
           </div>
         </ul>
-        <a href="#">Brokerage</a>
+        <a routerLink="#">Brokerage</a>
       </li>
 
       <!-- Investments -->
@@ -112,20 +112,20 @@
           <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
-              <a href="#">About Inverstments</a>
+              <a routerLink="#">About Inverstments</a>
             </li>
             <li>
-              <a href="#">E-books</a>
+              <a routerLink="#">E-books</a>
             </li>
             <li>
-              <a href="#">Coffee & trading Agreements</a>
+              <a routerLink="#">Coffee & trading Agreements</a>
             </li>
             <li>
-              <a href="#">Third party agreements</a>
+              <a routerLink="#">Third party agreements</a>
             </li>
           </div>
         </ul>
-        <a href="#">Inverstments</a>
+        <a routerLink="#">Inverstments</a>
       </li>
 
       <!-- Inverstments Banking -->
@@ -145,23 +145,23 @@
           <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
-              <a href="#">About Inverstments Banking</a>
+              <a routerLink="#">About Inverstments Banking</a>
             </li>
             <li>
-              <a href="#">Corporate Advisory</a>
+              <a routerLink="#">Corporate Advisory</a>
             </li>
             <li>
-              <a href="#">Capital Markets</a>
+              <a routerLink="#">Capital Markets</a>
             </li>
             <li>
-              <a href="#">Mezzanine Financing</a>
+              <a routerLink="#">Mezzanine Financing</a>
             </li>
             <li>
-              <a href="#">Transactions</a>
+              <a routerLink="#">Transactions</a>
             </li>
           </div>
         </ul>
-        <a href="#">Inverstment Banking</a>
+        <a routerLink="#">Inverstment Banking</a>
       </li>
 
       <!-- Media -->
@@ -181,17 +181,17 @@
           <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
-              <a href="#">Press Releases</a>
+              <a routerLink="#">Press Releases</a>
             </li>
             <li>
-              <a href="#">Blog</a>
+              <a routerLink="#">Blog</a>
             </li>
             <li>
-              <a href="#">C&T inMedia</a>
+              <a routerLink="#">C&T inMedia</a>
             </li>
           </div>
         </ul>
-        <a href="#">Media</a>
+        <a routerLink="#">Media</a>
       </li>
 
       <!-- green button -->
@@ -209,7 +209,7 @@
         class="white-button-container nav-list"
         [ngClass]="{ active: stateValueClientLogIn }"
       >
-        <button class="white-button" href="#">
+        <button class="white-button" routerLink="#">
           <span>CLIENT LOGIN</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -232,10 +232,10 @@
           <!-- dropdown menu -->
           <div class="drop-down-btn__list-box">
             <li>
-              <a href="#">TRADER</a>
+              <a routerLink="#">TRADER</a>
             </li>
             <li>
-              <a href="#">DASHBOARD</a>
+              <a routerLink="#">DASHBOARD</a>
             </li>
           </div>
         </ul>

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="header-box">
+    <h2>C&T Team</h2>
+    <div class="category-box">
+      <span>Category</span>
+      <select (change)="onSelectChage($event)">
+        <option value="management">Management</option>
+        <option value="research">Research</option>
+        <option value="brokerage">Brokerage</option>
+        <option value="investments">Investment Banking</option>
+      </select>
+    </div>
+  </div>
+  <div class="team-box">
+    <app-team-member-card
+      *ngFor="let member of ourTeam"
+      [imgURL]="member.imgUrl"
+      [mail]="member.email"
+      [name]="member.name"
+      [phone]="member.phone"
+      [title]="member.position"
+    ></app-team-member-card>
+  </div>
+</div>

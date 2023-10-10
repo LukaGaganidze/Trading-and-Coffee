@@ -1,0 +1,99 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+.sub-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: solid a.$form-border-colod 2px;
+  padding: 1.5rem;
+  border-radius: 1rem;
+
+  h5 {
+    text-align: center;
+    font-size: b.$font-size-form-heading;
+    letter-spacing: 1px;
+    border-bottom: solid a.$form-border-colod 1px;
+    padding: 1rem 0 1.5rem 0;
+  }
+
+  & input {
+    font-size: b.$font-size-sub-heading;
+    color: a.$imput-color;
+    padding: 1.5rem 2rem;
+    border: solid a.$form-border-colod 2px;
+    border-radius: 0.5rem;
+    &::placeholder {
+      color: a.$imput-color-placeholder;
+      opacity: 1; /* Firefox */
+    }
+
+    ::-ms-input-placeholder {
+      /* Edge 12-18 */
+      color: a.$imput-color-placeholder;
+    }
+
+    &:focus {
+      border: solid a.$form-border-colod 2px;
+      outline: none;
+
+      &::placeholder {
+        color: a.$imput-color-placeholder;
+        opacity: 1; /* Firefox */
+      }
+
+      ::-ms-input-placeholder {
+        /* Edge 12-18 */
+        color: a.$imput-color-placeholder;
+      }
+    }
+  }
+
+  & select {
+    font-size: b.$font-size-sub-heading;
+    color: a.$imput-color;
+    padding: 1.5rem 2rem;
+    border: solid a.$form-border-colod 2px;
+    border-radius: 0.5rem;
+
+    &:focus {
+      border: solid a.$form-border-colod 2px;
+      outline: none;
+
+      &::placeholder {
+        color: a.$imput-color-placeholder;
+        opacity: 1; /* Firefox */
+      }
+
+      ::-ms-input-placeholder {
+        /* Edge 12-18 */
+        color: a.$imput-color-placeholder;
+      }
+    }
+  }
+}
+
+// green button
+.button-link-green,
+.button-link-green:link,
+.button-link-green:visited {
+  display: block;
+  padding: 1.7rem 2rem;
+  border-radius: 0.5rem;
+  background-color: a.$main-color-green;
+  color: a.$main-color-white;
+  width: max-content;
+  text-decoration: none;
+  transition: all 0.4s;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: b.$font-size-sub-heading;
+  text-transform: uppercase;
+}
+.button-link-green:hover,
+.button-link-green:active {
+  background-color: a.$main-color-green-shade;
+  color: a.$main-color-white;
+}

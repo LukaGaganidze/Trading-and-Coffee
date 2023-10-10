@@ -5,6 +5,11 @@ import { GreenButtonComponent } from './green-button/green-button.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
 import { TransactionsCardComponent } from './transactions-card/transactions-card.component';
 import { ContactUsFormComponent } from './contact-us-form/contact-us-form.component';
+import { PageHeroComponent } from './page-hero/page-hero.component';
+import { TeamMemberCardComponent } from './team-member-card/team-member-card.component';
+
+import { RouterModule, RouterLink } from '@angular/router';
+import { AwardCardComponent } from './award-card/award-card.component';
 
 @NgModule({
   declarations: [
@@ -12,9 +17,12 @@ import { ContactUsFormComponent } from './contact-us-form/contact-us-form.compon
     BlogCardComponent,
     TransactionsCardComponent,
     ContactUsFormComponent,
+    PageHeroComponent,
+    TeamMemberCardComponent,
+    AwardCardComponent,
   ],
 
-  imports: [],
+  imports: [RouterLink, CommonModule, RouterModule],
 
   exports: [
     GreenButtonComponent,
@@ -22,6 +30,9 @@ import { ContactUsFormComponent } from './contact-us-form/contact-us-form.compon
     TransactionsCardComponent,
     CommonModule,
     ContactUsFormComponent,
+    PageHeroComponent,
+    TeamMemberCardComponent,
+    AwardCardComponent,
   ],
 })
 export class SharedModule {}
