@@ -37,23 +37,27 @@ export class AllAwardsComponent implements OnInit, OnDestroy {
   constructor(private awardsSer: AwardsServiceService) {}
 
   ngOnInit() {
-    this.awardsSer.awardsArraySelectedByYear.subscribe(
-      (araayOfAwards: AwardTypes[]) => {
-        this.awardsArray = araayOfAwards;
+    this.subscriptionAwardsArray =
+      this.awardsSer.awardsArraySelectedByYear.subscribe(
+        (araayOfAwards: AwardTypes[]) => {
+          this.awardsArray = araayOfAwards;
 
-        this.totalItems = araayOfAwards.length;
-        this.totalPages = Math.ceil(this.totalItems / 12);
+          this.totalItems = araayOfAwards.length;
+          this.totalPages = Math.ceil(this.totalItems / 12);
+        }
+      );
+
+    this.startAndEndIndexSubscription =
+      this.awardsSer.startAndEndIndexBSub.subscribe((data) => {
+        this.startIndex = data.start;
+        this.endIndex = data.end;
+      });
+
+    this.currentPageSubscription = this.awardsSer.currentPageBsub.subscribe(
+      (curPage) => {
+        this.currentPage = curPage;
       }
     );
-
-    this.awardsSer.startAndEndIndexBSub.subscribe((data) => {
-      this.startIndex = data.start;
-      this.endIndex = data.end;
-    });
-
-    this.awardsSer.currentPageBsub.subscribe((curPage) => {
-      this.currentPage = curPage;
-    });
   }
 
   //#FFF PAGINATION
