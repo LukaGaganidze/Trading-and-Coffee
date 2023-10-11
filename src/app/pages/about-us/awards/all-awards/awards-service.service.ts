@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { AwardTypes } from './awar-types';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AwardsServiceService {
+export class AwardsServiceService implements OnInit {
+  // array of all awards
   arrayOfAwards: AwardTypes[] = [
     {
       award:
@@ -243,20 +244,90 @@ export class AwardsServiceService {
     },
   ];
 
-  awardsBehaviourSubject = new BehaviorSubject<AwardTypes[]>(
+  currentArraySelectedByYear: AwardTypes[] = [];
+
+  // PAGINATION
+  pageSize: number = 12;
+  currentPage: number = 1;
+
+  startIndex: number = 0;
+  endIndex: number = this.pageSize;
+
+  totalItems: number = 0;
+  totalPages: number = 0;
+
+  // BehaviurSubjects
+  // Latest Version Of Array Of Awards (selected by user)
+  awardsArraySelectedByYear = new BehaviorSubject<AwardTypes[]>(
     this.arrayOfAwards
   );
 
+  // PAGINATION
+
+  // start page and end page
+  startAndEndIndexBSub = new BehaviorSubject({
+    start: this.startIndex,
+    end: this.endIndex,
+  });
+
+  // current page
+  currentPageBsub = new BehaviorSubject(1);
+
+  // Pages Array
+  pagesArray = new BehaviorSubject(this.totalPages);
+
   constructor() {}
 
-  reactToYearChangeEvent(year: number | string) {
-    if (year === 'all') {
-      this.awardsBehaviourSubject.next(this.arrayOfAwards);
-    } else {
-      this.awardsBehaviourSubject.next(this.awardsSelectedByYear(year));
+  ngOnInit(): void {
+    this.awardsArraySelectedByYear.subscribe((awardsArr) => {
+      this.currentArraySelectedByYear = awardsArr;
+
+      this.totalItems = this.currentArraySelectedByYear.length;
+      this.totalPages = Math.ceil(this.totalItems / this.pageSize);
+    });
+  }
+
+  //#FFF PAGINATION
+  reactToprevPageClick() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.currentPageBsub.next(this.currentPage);
+      this.updatePageRange();
     }
   }
 
+  reactToNextPageClick() {
+    if (this.endIndex < this.currentArraySelectedByYear.length) {
+      this.currentPage++;
+      this.currentPageBsub.next(this.currentPage);
+      this.updatePageRange();
+    }
+  }
+
+  reactToGoToPageClick(page: number) {
+    this.currentPage = page;
+    this.currentPageBsub.next(this.currentPage);
+    this.updatePageRange();
+  }
+
+  private updatePageRange() {
+    this.startIndex = (this.currentPage - 1) * this.pageSize;
+    this.endIndex = this.startIndex + this.pageSize;
+
+    this.startAndEndIndexBSub.next({
+      start: this.startIndex,
+      end: this.endIndex,
+    });
+  }
+
+  //#fff *********** selecting by year *********** //
+  reactToYearChangeEvent(year: number | string) {
+    if (year === 'all') {
+      this.awardsArraySelectedByYear.next(this.arrayOfAwards);
+    } else {
+      this.awardsArraySelectedByYear.next(this.awardsSelectedByYear(year));
+    }
+  }
   awardsSelectedByYear(year: number | string) {
     return this.arrayOfAwards.filter((award) => +award.year === +year);
   }

@@ -1,73 +1,84 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
 import { AwardTypes } from './awar-types';
 import { AwardsServiceService } from './awards-service.service';
-import { ViewportScroller } from '@angular/common';
+
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'about-awards-all-awards',
   templateUrl: './all-awards.component.html',
   styleUrls: ['./all-awards.component.scss'],
 })
-export class AllAwardsComponent implements OnInit {
+export class AllAwardsComponent implements OnInit, OnDestroy {
   @ViewChild('awardsContainer') awardsContainer: ElementRef | undefined;
 
   awardsArray: AwardTypes[] = [];
 
-  pageSize: number = 12;
   currentPage: number = 1;
+
   startIndex: number = 0;
-  endIndex: number = this.pageSize;
+  endIndex: number = 12;
 
   totalItems: number = 0;
   totalPages: number = 0;
 
-  constructor(
-    private awardsSer: AwardsServiceService,
-    private viewPortScroll: ViewportScroller
-  ) {}
+  // subscriptions
+  subscriptionAwardsArray!: Subscription;
+  startAndEndIndexSubscription!: Subscription;
+  currentPageSubscription!: Subscription;
+
+  constructor(private awardsSer: AwardsServiceService) {}
 
   ngOnInit() {
-    this.awardsSer.awardsBehaviourSubject.subscribe(
+    this.awardsSer.awardsArraySelectedByYear.subscribe(
       (araayOfAwards: AwardTypes[]) => {
         this.awardsArray = araayOfAwards;
 
         this.totalItems = araayOfAwards.length;
-        this.totalPages = Math.ceil(this.totalItems / this.pageSize);
+        this.totalPages = Math.ceil(this.totalItems / 12);
       }
     );
-  }
 
-  // #FFF selection and display by year selector
-  onChangeSelectedYear(e: Event) {
-    const chosenYear = (e.target as HTMLSelectElement).value;
-    this.awardsSer.reactToYearChangeEvent(chosenYear);
+    this.awardsSer.startAndEndIndexBSub.subscribe((data) => {
+      this.startIndex = data.start;
+      this.endIndex = data.end;
+    });
+
+    this.awardsSer.currentPageBsub.subscribe((curPage) => {
+      this.currentPage = curPage;
+    });
   }
 
   //#FFF PAGINATION
   prevPage() {
-    if (this.currentPage > 1) {
-      this.currentPage--;
-      this.updatePageRange();
-    }
+    this.awardsSer.reactToprevPageClick();
+
+    // navigate on top of the page
     if (this.awardsContainer && this.awardsContainer.nativeElement) {
       this.awardsContainer.nativeElement.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
   nextPage() {
-    if (this.endIndex < this.awardsArray.length) {
-      this.currentPage++;
-      this.updatePageRange();
-    }
+    this.awardsSer.reactToNextPageClick();
+
+    // navigate on top of the page
     if (this.awardsContainer && this.awardsContainer.nativeElement) {
       this.awardsContainer.nativeElement.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
   goToPage(page: number) {
-    this.currentPage = page;
-    this.updatePageRange();
+    this.awardsSer.reactToGoToPageClick(page);
+
+    // navigate on top of the page
     if (this.awardsContainer && this.awardsContainer.nativeElement) {
       this.awardsContainer.nativeElement.scrollIntoView({ behavior: 'smooth' });
     }
@@ -81,8 +92,15 @@ export class AllAwardsComponent implements OnInit {
     return pagesArray;
   }
 
-  private updatePageRange() {
-    this.startIndex = (this.currentPage - 1) * this.pageSize;
-    this.endIndex = this.startIndex + this.pageSize;
+  // #FFF selection and display by year selector
+  onChangeSelectedYear(e: Event) {
+    const chosenYear = (e.target as HTMLSelectElement).value;
+    this.awardsSer.reactToYearChangeEvent(chosenYear);
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptionAwardsArray.unsubscribe();
+    this.startAndEndIndexSubscription.unsubscribe();
+    this.currentPageSubscription.unsubscribe();
   }
 }

@@ -28,12 +28,13 @@
     </div>
   </ng-container>
 
+  <!-- pagination -->
   <div *ngIf="totalPages > 1" class="pagination">
     <!-- navigate left -->
     <button
+      [disabled]="currentPage === 1"
       class="navigate-left-btn"
       (click)="prevPage()"
-      [disabled]="currentPage === 1"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -54,9 +55,9 @@
     <!-- navigate to exact page -->
     <ng-container *ngFor="let page of getPagesArray()">
       <button
+        [disabled]="currentPage === page"
         class="pagination-num"
         (click)="goToPage(page)"
-        [disabled]="currentPage === page"
       >
         <span>
           {{ page }}
@@ -66,9 +67,9 @@
 
     <!-- navigate right -->
     <button
+      [disabled]="endIndex >= awardsArray.length"
       class="navigate-right-btn"
       (click)="nextPage()"
-      [disabled]="endIndex >= awardsArray.length"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
