@@ -1,0 +1,118 @@
+<div class="main-container">
+  <!-- header -->
+  <div class="header">
+    <ul>
+      <li>
+        <a
+          routerLink="/research/research-reports/all"
+          routerLinkActive="active-route"
+          >All Reposrts</a
+        >
+      </li>
+
+      <li>
+        <a
+          routerLink="/research/research-reports/market-watch"
+          routerLinkActive="active-route"
+          >Market Watch</a
+        >
+      </li>
+
+      <li>
+        <a
+          routerLink="/research/research-reports/economy"
+          routerLinkActive="active-route"
+          >Economy</a
+        >
+      </li>
+
+      <li>
+        <a
+          routerLink="/research/research-reports/sectors"
+          routerLinkActive="active-route"
+          >Sectors</a
+        >
+      </li>
+
+      <li>
+        <a
+          routerLink="/research/research-reports/companies"
+          routerLinkActive="active-route"
+          >Companies</a
+        >
+      </li>
+    </ul>
+
+    <div class="search-tools">
+      <!-- INPUT BOX -->
+      <form [formGroup]="inputForm" (ngSubmit)="onSubmitInputForm()">
+        <div class="input-box">
+          <button type="submit" class="search-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="search-btn__svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+              />
+            </svg>
+          </button>
+          <input
+            formControlName="searchInput"
+            type="text"
+            placeholder="search by title"
+          />
+        </div>
+      </form>
+
+      <!-- SELCTION YEAR -->
+      <div class="year-select-box">
+        <span>Year</span>
+        <select (change)="onFilterByYear($event)">
+          <option value="all">All</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+        </select>
+      </div>
+
+      <!-- SELCTION MONTH -->
+
+      <!-- if year is not selected it is disabled -->
+      <div *ngIf="disabledMonthFilter" class="year-select-box disabled-select">
+        <span>Month</span>
+        <div class="placeholder"></div>
+      </div>
+      <div *ngIf="!disabledMonthFilter" class="year-select-box">
+        <span>Month</span>
+
+        <select [(ngModel)]="selectedMonth" (change)="onFilterByMonth($event)">
+          <option value="all">All</option>
+          <option value="january">January</option>
+          <option value="february">February</option>
+          <option value="march">March</option>
+          <option value="april">April</option>
+          <option value="may">May</option>
+          <option value="june">June</option>
+          <option value="july">July</option>
+          <option value="august">August</option>
+          <option value="september">September</option>
+          <option value="october">October</option>
+          <option value="november">November</option>
+          <option value="december">December</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <router-outlet></router-outlet>
+</div>

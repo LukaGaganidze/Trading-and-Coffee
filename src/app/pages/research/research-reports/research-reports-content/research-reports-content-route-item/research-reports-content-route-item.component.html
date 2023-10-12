@@ -1,0 +1,15 @@
+<!-- main content -->
+
+<div class="content">
+  <div
+    *ngFor="let research of arrayOfResearches | async; let i = index"
+    class="research-card-container"
+    [ngClass]="{ 'borderless-fourth': (i + 1) % 4 === 0 }"
+  >
+    <app-research-card [researchItem]="research"></app-research-card>
+  </div>
+</div>
+
+<div class="optional" *ngIf="!havResultsToDisplay">
+  No Research Reports Found
+</div>

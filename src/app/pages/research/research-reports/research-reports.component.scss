@@ -1,0 +1,12 @@
+@use "../../../.././global-styles/abstracts" as a;
+@use "../../../.././global-styles/base" as b;
+
+// hero
+h2 {
+  font-size: b.$font-size-heading;
+}
+p {
+  font-size: b.$font-size-sub-heading;
+  width: 80%;
+  line-height: 25px;
+}

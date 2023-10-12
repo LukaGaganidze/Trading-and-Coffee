@@ -1,0 +1,34 @@
+@use "../../../../../../global-styles/abstracts" as a;
+@use "../../../../../../global-styles/base" as b;
+
+// CONTENT #FFF
+.content {
+  margin: 0 auto;
+  max-width: b.$container-default-wudth;
+  transform: translateY(-2rem);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  column-gap: 2rem;
+  row-gap: 4rem;
+}
+
+.research-card-container {
+  border-right: solid a.$imput-color 2px;
+}
+
+.borderless-fourth,
+.research-card-container:last-child {
+  border-right: solid transparent 2px;
+}
+
+//
+.optional {
+  font-size: 2.5rem;
+  text-align: center;
+  background-color: rgba($color: a.$imput-color, $alpha: 0.1);
+  padding: 3rem;
+  color: a.$imput-color;
+  margin-bottom: 5rem;
+}

@@ -10,8 +10,9 @@ import { AboutAwardsModule } from './awards/about-awards.module';
 @NgModule({
   declarations: [],
   imports: [
-    AboutRoutingModule,
     ReactiveFormsModule,
+
+    AboutRoutingModule,
 
     AboutWahtWoDoModule,
     AboutTeamModule,

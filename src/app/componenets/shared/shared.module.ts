@@ -10,6 +10,7 @@ import { TeamMemberCardComponent } from './team-member-card/team-member-card.com
 
 import { RouterModule, RouterLink } from '@angular/router';
 import { AwardCardComponent } from './award-card/award-card.component';
+import { ResearchCardComponent } from './research-card/research-card.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AwardCardComponent } from './award-card/award-card.component';
     PageHeroComponent,
     TeamMemberCardComponent,
     AwardCardComponent,
+    ResearchCardComponent,
   ],
 
   imports: [RouterLink, CommonModule, RouterModule],
@@ -33,6 +35,7 @@ import { AwardCardComponent } from './award-card/award-card.component';
     PageHeroComponent,
     TeamMemberCardComponent,
     AwardCardComponent,
+    ResearchCardComponent,
   ],
 })
 export class SharedModule {}

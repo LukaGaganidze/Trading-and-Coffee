@@ -11,6 +11,7 @@ import { FooterModule } from './componenets/footer/footer.module';
 
 import { HomePageModule } from './pages/home/home.module';
 import { AbouteModule } from './pages/about-us/about.module';
+import { ResearchPageModule } from './pages/research/research.module';
 
 import { AppComponent } from './app.component';
 
@@ -25,10 +26,11 @@ import { AppComponent } from './app.component';
     HeaderModule,
     FooterModule,
 
-    HomePageModule,
     AppRoutingModule,
 
+    HomePageModule,
     AbouteModule,
+    ResearchPageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

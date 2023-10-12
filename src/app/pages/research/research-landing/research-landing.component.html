@@ -1,0 +1,77 @@
+<!-- hero -->
+<app-page-hero
+  [backgrounUrl]="'../../../../assets/research/hero/hero.jpg'"
+  [buttonContent]="''"
+  [inputLink]="''"
+>
+  <h2>About Research</h2>
+  <p>
+    Galt & Taggart is the pioneer in investment researches in Georgia. We offer
+    wide range researches in various sectors and, also, deep and professional
+    analyses of each of them.
+  </p>
+</app-page-hero>
+
+<!-- contents -->
+<div class="latest-reports">
+  <h3 class="reports-header">ABOUT RESEARCH</h3>
+
+  <div class="research-title">
+    <p>
+      Galt & Taggart Research provides fundamental insights and analysis for
+      clients in the economy, corporate sectors and fixed income. We also offer
+      special reports tailored to clients’ needs. Our research supports
+      investors better understand the issues and trends that affect companies,
+      industries and markets.
+    </p>
+    <p>
+      Galt & Taggart Research products are available on leading proprietary
+      platforms, including Bloomberg, Thomson Reuters, S&P Capital IQ, FactSet
+      and Tellimer.
+    </p>
+  </div>
+
+  <ul class="research-coverage-list">
+    <p class="research-coverage-list__heading">Our coverage</p>
+
+    <li>
+      <span>Macro Research</span> offers key economic trends and projections
+      primarily focusing on Georgia, and also other regional economies. We
+      provide macroeconomic, foreign exchange rate and interest rate forecasts,
+      market views, and recommendations.
+    </li>
+    <li>
+      <span>Sector Research</span> offers in-depth coverage of key sectors of
+      Georgian economy to identify and communicate investment opportunities,
+      focusing on key trends and developments, profitability analysis, growth
+      prospects and forecasts.
+    </li>
+    <li>
+      <span>Fixed income</span> provides coverage of Georgian and regional fixed
+      income securities, with emphasis on key macro trends and market views.
+    </li>
+  </ul>
+
+  <div class="costumer-research-box">
+    <p>Custom Research</p>
+
+    <p>
+      We offer specific reports tailored to clients’ needs to identify
+      investment opportunities or understand trends that affect their companies
+      and industries. In this regard, we offer in-depth sector research,
+      business plan, feasibility studies and financial modelling for local and
+      foreign investors.
+    </p>
+  </div>
+
+  <div class="latest-reports-heading-box">
+    <h3 class="reports-header">LATEST REPORTS</h3>
+    <span (click)="onNavigateToReports()" href="#">View All</span>
+  </div>
+
+  <div class="cntainer">
+    <div *ngFor="let researchCard of researchArray" class="card-cntainer">
+      <app-research-card [researchItem]="researchCard"></app-research-card>
+    </div>
+  </div>
+</div>

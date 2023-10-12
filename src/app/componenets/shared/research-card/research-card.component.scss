@@ -1,0 +1,52 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+.research-report-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 2rem;
+}
+
+.res-sub-header {
+  font-size: b.$card-small-text;
+  color: a.$imput-color;
+}
+
+.res-header {
+  font-size: b.$font-size-sub-heading;
+  height: 4rem;
+}
+
+.res-date {
+  font-size: b.$card-small-text;
+  color: a.$color-cmall-date;
+  margin-bottom: 1rem;
+}
+
+.res-pdf-link,
+.res-pdf-link:link,
+.res-pdf-link:visited {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  width: max-content;
+  margin-bottom: 2rem;
+
+  & span {
+    color: a.$footer-link-color;
+  }
+
+  & svg {
+    stroke: a.$footer-link-color;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.res-learn-more-link,
+.res-learn-more-link:link,
+.res-learn-more-link:visited {
+  color: a.$footer-link-color;
+}

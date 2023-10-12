@@ -1,0 +1,150 @@
+@use "../../../../.././global-styles/abstracts" as a;
+@use "../../../../.././global-styles/base" as b;
+
+// .main-container {
+// }
+
+.header {
+  transform: translateY(-10rem);
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  background-color: a.$main-color-white;
+
+  margin: 0 auto;
+  max-width: b.$container-default-wudth;
+  padding: 0 5rem;
+
+  & ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    border-bottom: solid a.$imput-color-placeholder 1.5px;
+
+    & a,
+    & a:link,
+    & a:visited {
+      text-decoration: none;
+      color: a.$imput-color;
+      font-size: b.$font-size-sub-heading;
+      letter-spacing: 1px;
+      font-weight: 600;
+      border-bottom: solid transparent 4px;
+      display: block;
+      padding: 3rem 4rem;
+      transition: all 0.4s;
+    }
+
+    & a:hover,
+    & a:active {
+      border-bottom: solid a.$main-color-green 4px !important;
+      color: a.$text-color !important;
+    }
+  }
+}
+
+.search-tools {
+  padding-top: 3rem;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+  align-items: center;
+}
+// INPUT BOX
+.input-box {
+  position: relative;
+
+  & input {
+    width: 80%;
+
+    display: block;
+    height: 3.5rem;
+    padding: 1.2rem 0;
+    padding-left: 6rem;
+    border-radius: 3rem;
+    overflow: hidden;
+    border: none;
+    font-size: 2rem;
+    background-color: rgba($color: a.$imput-color-placeholder, $alpha: 0.2);
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.search-btn {
+  padding: 0.5rem;
+  height: 4rem;
+  width: 4rem;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+
+  &__svg {
+    border-radius: 100%;
+    cursor: pointer;
+    color: a.$imput-color;
+  }
+}
+
+// SELECTION
+.year-select-box {
+  border: solid a.$form-border-colod 1px;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 14rem;
+  color: a.$imput-color;
+  border-radius: 0.6rem;
+  width: 70%;
+
+  select {
+    border: none;
+    transform: translateX(-3px);
+    color: a.$text-color;
+    cursor: pointer;
+    height: 2rem;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  & span {
+    letter-spacing: 1px;
+  }
+}
+.year-select-box.disabled-select {
+  border: solid a.$form-border-colod 1px;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 14rem;
+  color: a.$imput-color;
+  border-radius: 0.6rem;
+  width: 70%;
+  cursor: default;
+
+  .placeholder {
+    height: 2rem;
+  }
+
+  & span {
+    letter-spacing: 1px;
+  }
+}
+
+.active-route,
+.active-route:link,
+.active-route:visited {
+  border-bottom: solid a.$main-color-green 4px !important;
+  color: a.$text-color !important;
+}

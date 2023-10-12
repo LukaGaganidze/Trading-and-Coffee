@@ -1,0 +1,83 @@
+@use "../../../.././global-styles/abstracts" as a;
+@use "../../../.././global-styles/base" as b;
+
+// hero
+h2 {
+  font-size: b.$font-size-heading;
+}
+p {
+  font-size: b.$font-size-sub-heading;
+  width: 80%;
+  line-height: 25px;
+}
+
+// content
+.latest-reports {
+  margin: 0 auto 8rem auto;
+  max-width: b.$container-default-wudth;
+
+  & h3 {
+    font-size: b.$font-size-heading;
+    margin: 5rem 0;
+  }
+}
+
+.research-coverage-list {
+  &__heading {
+    font-size: b.$font-size-sub-heading;
+    font-weight: 700;
+    margin: 2rem 0 1rem 0;
+    text-transform: uppercase;
+  }
+  & span {
+    font-size: b.$font-size-sub-heading;
+    color: a.$main-color-green;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  & li {
+    list-style: none;
+    line-height: 25px;
+  }
+
+  & li::before {
+    content: "\2022";
+    color: a.$main-color-green;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+}
+
+.costumer-research-box {
+  & p:first-child {
+    font-size: b.$font-size-sub-heading;
+    font-weight: 700;
+    margin: 2rem 0 1rem 0;
+    text-transform: uppercase;
+  }
+}
+
+.cntainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.latest-reports-heading-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  & span {
+    color: a.$footer-link-color;
+    cursor: pointer;
+  }
+}
+.card-cntainer:not(:last-child) {
+  border-right: solid a.$imput-color 1px;
+}
