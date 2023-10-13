@@ -135,6 +135,13 @@ export class NavBarComponent implements OnInit, OnDestroy {
     this.navService.onHideclientLogIn();
   }
 
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Enable smooth scrolling
+    });
+  }
+
   ngOnDestroy() {
     this.subscriptionAboutUs.unsubscribe();
     this.subscriptionResearch.unsubscribe();

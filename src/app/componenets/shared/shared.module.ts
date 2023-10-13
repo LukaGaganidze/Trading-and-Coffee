@@ -11,6 +11,7 @@ import { TeamMemberCardComponent } from './team-member-card/team-member-card.com
 import { RouterModule, RouterLink } from '@angular/router';
 import { AwardCardComponent } from './award-card/award-card.component';
 import { ResearchCardComponent } from './research-card/research-card.component';
+import { PaginationSharedComponenetComponent } from './pagination-shared-componenet/pagination-shared-componenet.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ResearchCardComponent } from './research-card/research-card.component';
     TeamMemberCardComponent,
     AwardCardComponent,
     ResearchCardComponent,
+    PaginationSharedComponenetComponent,
   ],
 
   imports: [RouterLink, CommonModule, RouterModule],
@@ -36,6 +38,7 @@ import { ResearchCardComponent } from './research-card/research-card.component';
     TeamMemberCardComponent,
     AwardCardComponent,
     ResearchCardComponent,
+    PaginationSharedComponenetComponent,
   ],
 })
 export class SharedModule {}

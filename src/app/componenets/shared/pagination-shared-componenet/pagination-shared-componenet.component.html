@@ -1,0 +1,58 @@
+<div class="pagination">
+  <!-- navigate to prev page -->
+  <button
+    class="navigate-left-btn"
+    (click)="gotoPage(currentPage - 1)"
+    [disabled]="currentPage === 1"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="navigate-left-svg"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M15.75 19.5L8.25 12l7.5-7.5"
+      />
+    </svg>
+  </button>
+
+  <!-- navigate to exact page -->
+  <ng-container *ngFor="let page of pages">
+    <button
+      class="pagination-num"
+      (click)="gotoPage(page)"
+      [disabled]="currentPage === page"
+    >
+      <span>
+        {{ page }}
+      </span>
+    </button>
+  </ng-container>
+
+  <!-- navigate to next page -->
+  <button
+    class="navigate-right-btn"
+    (click)="gotoPage(currentPage + 1)"
+    [disabled]="currentPage === totalPages"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="navigate-right-svg"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M15.75 19.5L8.25 12l7.5-7.5"
+      />
+    </svg>
+  </button>
+</div>

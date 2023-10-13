@@ -1,15 +1,31 @@
 <!-- main content -->
 
-<div class="content">
-  <div
-    *ngFor="let research of arrayOfResearches | async; let i = index"
-    class="research-card-container"
-    [ngClass]="{ 'borderless-fourth': (i + 1) % 4 === 0 }"
-  >
-    <app-research-card [researchItem]="research"></app-research-card>
+<div class="container">
+  <div #researchContainer class="content">
+    <div
+      *ngFor="
+        let research of itemsToDisplay.slice(
+          (currentPage - 1) * itemsPerPage,
+          currentPage * itemsPerPage
+        );
+        let i = index
+      "
+      class="research-card-container"
+      [ngClass]="{ 'borderless-fourth': (i + 1) % 4 === 0 }"
+    >
+      <app-research-card [researchItem]="research"></app-research-card>
+    </div>
   </div>
-</div>
-
-<div class="optional" *ngIf="!havResultsToDisplay">
-  No Research Reports Found
+  <div class="optional" *ngIf="!havResultsToDisplay">
+    No Research Reports Found
+  </div>
+  <!-- pagination -->
+  <app-pagination-shared-componenet
+    *ngIf="itemsToDisplay.length / itemsPerPage > 1"
+    [currentPage]="currentPage"
+    [itemsPerPage]="itemsPerPage"
+    [totalItems]="itemsToDisplay.length"
+    [itemsContainer]="researchContainer"
+    (pageChange)="onPageChange($event)"
+  ></app-pagination-shared-componenet>
 </div>

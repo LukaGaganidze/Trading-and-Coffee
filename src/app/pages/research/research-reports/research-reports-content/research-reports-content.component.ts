@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { ReportsItemServiceService } from './research-reports-content-route-item/reports-item-service.service';
 
+import { ResearcheServiceService } from '../../researche-service.service';
+
 @Component({
   selector: 'app-research-reports-content',
   templateUrl: './research-reports-content.component.html',
@@ -11,12 +13,18 @@ import { ReportsItemServiceService } from './research-reports-content-route-item
 export class ResearchReportsContentComponent implements OnInit {
   // month is disabled if years is all
   disabledMonthFilter = true;
+
   // initial value of month (restarts everytime when years is changed with two way binding)
+  selectYear = 'all';
   selectedMonth = 'all';
+
   // input
   inputForm!: FormGroup;
 
-  constructor(private reportItemSer: ReportsItemServiceService) {}
+  constructor(
+    private reportItemSer: ReportsItemServiceService,
+    private resSer: ResearcheServiceService
+  ) {}
 
   ngOnInit(): void {
     this.inputForm = new FormGroup({
@@ -25,8 +33,13 @@ export class ResearchReportsContentComponent implements OnInit {
         Validators.min(3),
       ]),
     });
-  }
 
+    this.resSer.backToAll.subscribe((val: string) => {
+      this.selectYear = val;
+      this.selectedMonth = 'all';
+      this.disabledMonthFilter = true;
+    });
+  }
   onSubmitInputForm() {
     if (!this.inputForm.valid) return;
 
@@ -38,7 +51,6 @@ export class ResearchReportsContentComponent implements OnInit {
 
     this.inputForm.reset();
   }
-
   onFilterByYear(e: Event) {
     if ((e.target as HTMLSelectElement).value == 'all') {
       this.disabledMonthFilter = true;

@@ -1,7 +1,7 @@
 <div [ngClass]="{ scrolled: wasScrolled }" class="container">
   <nav class="navbar">
     <!-- main logo -->
-    <a routerLink="" class="main-logo-link">
+    <a (click)="scrollToTop()" routerLink="" class="main-logo-link">
       <img
         class="main-logo"
         src="../../../../assets/header/main-logo.png"
@@ -28,17 +28,21 @@
           <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
-              <a routerLink="about/what-we-do">What We Do</a>
+              <a (click)="scrollToTop()" routerLink="about/what-we-do"
+                >What We Do</a
+              >
             </li>
             <li>
-              <a routerLink="about/our-team">Our Team</a>
+              <a (click)="scrollToTop()" routerLink="about/our-team"
+                >Our Team</a
+              >
             </li>
             <li>
-              <a routerLink="about/awards">Awards</a>
+              <a (click)="scrollToTop()" routerLink="about/awards">Awards</a>
             </li>
           </div>
         </ul>
-        <a routerLink="about">About Us</a>
+        <a (click)="scrollToTop()" routerLink="about">About Us</a>
       </li>
 
       <!-- research -->
@@ -58,14 +62,18 @@
           <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
-              <a routerLink="research/about-research">About Research</a>
+              <a (click)="scrollToTop()" routerLink="research/about-research"
+                >About Research</a
+              >
             </li>
             <li>
-              <a routerLink="research/research-reports">Research Reports</a>
+              <a (click)="scrollToTop()" routerLink="research/research-reports"
+                >Research Reports</a
+              >
             </li>
           </div>
         </ul>
-        <a routerLink="research">Research</a>
+        <a (click)="scrollToTop()" routerLink="research">Research</a>
       </li>
 
       <!-- brokerage -->
@@ -85,14 +93,14 @@
           <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
-              <a routerLink="#">About Brokerage</a>
+              <a (click)="scrollToTop()" routerLink="#">About Brokerage</a>
             </li>
             <li>
-              <a routerLink="#">Service Agreements</a>
+              <a (click)="scrollToTop()" routerLink="#">Service Agreements</a>
             </li>
           </div>
         </ul>
-        <a routerLink="#">Brokerage</a>
+        <a (click)="scrollToTop()" routerLink="#">Brokerage</a>
       </li>
 
       <!-- Investments -->
@@ -112,20 +120,24 @@
           <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
-              <a routerLink="#">About Inverstments</a>
+              <a (click)="scrollToTop()" routerLink="#">About Inverstments</a>
             </li>
             <li>
-              <a routerLink="#">E-books</a>
+              <a (click)="scrollToTop()" routerLink="#">E-books</a>
             </li>
             <li>
-              <a routerLink="#">Coffee & trading Agreements</a>
+              <a (click)="scrollToTop()" routerLink="#"
+                >Coffee & trading Agreements</a
+              >
             </li>
             <li>
-              <a routerLink="#">Third party agreements</a>
+              <a (click)="scrollToTop()" routerLink="#"
+                >Third party agreements</a
+              >
             </li>
           </div>
         </ul>
-        <a routerLink="#">Inverstments</a>
+        <a (click)="scrollToTop()" routerLink="#">Inverstments</a>
       </li>
 
       <!-- Inverstments Banking -->
@@ -145,23 +157,25 @@
           <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
-              <a routerLink="#">About Inverstments Banking</a>
+              <a (click)="scrollToTop()" routerLink="#"
+                >About Inverstments Banking</a
+              >
             </li>
             <li>
-              <a routerLink="#">Corporate Advisory</a>
+              <a (click)="scrollToTop()" routerLink="#">Corporate Advisory</a>
             </li>
             <li>
-              <a routerLink="#">Capital Markets</a>
+              <a (click)="scrollToTop()" routerLink="#">Capital Markets</a>
             </li>
             <li>
-              <a routerLink="#">Mezzanine Financing</a>
+              <a (click)="scrollToTop()" routerLink="#">Mezzanine Financing</a>
             </li>
             <li>
-              <a routerLink="#">Transactions</a>
+              <a (click)="scrollToTop()" routerLink="#">Transactions</a>
             </li>
           </div>
         </ul>
-        <a routerLink="#">Inverstment Banking</a>
+        <a (click)="scrollToTop()" routerLink="#">Inverstment Banking</a>
       </li>
 
       <!-- Media -->
@@ -181,17 +195,17 @@
           <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
-              <a routerLink="#">Press Releases</a>
+              <a (click)="scrollToTop()" routerLink="#">Press Releases</a>
             </li>
             <li>
-              <a routerLink="#">Blog</a>
+              <a (click)="scrollToTop()" routerLink="#">Blog</a>
             </li>
             <li>
-              <a routerLink="#">C&T inMedia</a>
+              <a (click)="scrollToTop()" routerLink="#">C&T inMedia</a>
             </li>
           </div>
         </ul>
-        <a routerLink="#">Media</a>
+        <a (click)="scrollToTop()" routerLink="#">Media</a>
       </li>
 
       <!-- green button -->

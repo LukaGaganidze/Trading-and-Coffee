@@ -22,17 +22,15 @@ export class AllAwardsComponent implements OnInit, OnDestroy {
   awardsArray: AwardTypes[] = [];
 
   currentPage: number = 1;
+  itemsPerPage: number = 12;
 
   startIndex: number = 0;
-  endIndex: number = 12;
 
   totalItems: number = 0;
   totalPages: number = 0;
 
   // subscriptions
   subscriptionAwardsArray!: Subscription;
-  startAndEndIndexSubscription!: Subscription;
-  currentPageSubscription!: Subscription;
 
   constructor(private awardsSer: AwardsServiceService) {}
 
@@ -46,54 +44,10 @@ export class AllAwardsComponent implements OnInit, OnDestroy {
           this.totalPages = Math.ceil(this.totalItems / 12);
         }
       );
-
-    this.startAndEndIndexSubscription =
-      this.awardsSer.startAndEndIndexBSub.subscribe((data) => {
-        this.startIndex = data.start;
-        this.endIndex = data.end;
-      });
-
-    this.currentPageSubscription = this.awardsSer.currentPageBsub.subscribe(
-      (curPage) => {
-        this.currentPage = curPage;
-      }
-    );
   }
 
-  //#FFF PAGINATION
-  prevPage() {
-    this.awardsSer.reactToprevPageClick();
-
-    // navigate on top of the page
-    if (this.awardsContainer && this.awardsContainer.nativeElement) {
-      this.awardsContainer.nativeElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  nextPage() {
-    this.awardsSer.reactToNextPageClick();
-
-    // navigate on top of the page
-    if (this.awardsContainer && this.awardsContainer.nativeElement) {
-      this.awardsContainer.nativeElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  goToPage(page: number) {
-    this.awardsSer.reactToGoToPageClick(page);
-
-    // navigate on top of the page
-    if (this.awardsContainer && this.awardsContainer.nativeElement) {
-      this.awardsContainer.nativeElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  getPagesArray(): number[] {
-    const pagesArray: number[] = [];
-    for (let i = 1; i <= this.totalPages; i++) {
-      pagesArray.push(i);
-    }
-    return pagesArray;
+  onPageChange(page: number) {
+    this.currentPage = page;
   }
 
   // #FFF selection and display by year selector
@@ -104,7 +58,5 @@ export class AllAwardsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscriptionAwardsArray.unsubscribe();
-    this.startAndEndIndexSubscription.unsubscribe();
-    this.currentPageSubscription.unsubscribe();
   }
 }

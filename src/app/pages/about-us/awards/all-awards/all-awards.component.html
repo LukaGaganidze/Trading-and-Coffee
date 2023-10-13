@@ -22,69 +22,23 @@
   <ng-container>
     <div class="awards-container">
       <app-award-card
-        *ngFor="let award of awardsArray.slice(startIndex, endIndex)"
+        *ngFor="
+          let award of awardsArray.slice(
+            (currentPage - 1) * itemsPerPage,
+            currentPage * itemsPerPage
+          )
+        "
         [award]="award"
       ></app-award-card>
     </div>
   </ng-container>
 
-  <!-- pagination -->
-  <div *ngIf="totalPages > 1" class="pagination">
-    <!-- navigate left -->
-    <button
-      [disabled]="currentPage === 1"
-      class="navigate-left-btn"
-      (click)="prevPage()"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="navigate-left-svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M15.75 19.5L8.25 12l7.5-7.5"
-        />
-      </svg>
-    </button>
-
-    <!-- navigate to exact page -->
-    <ng-container *ngFor="let page of getPagesArray()">
-      <button
-        [disabled]="currentPage === page"
-        class="pagination-num"
-        (click)="goToPage(page)"
-      >
-        <span>
-          {{ page }}
-        </span>
-      </button>
-    </ng-container>
-
-    <!-- navigate right -->
-    <button
-      [disabled]="endIndex >= awardsArray.length"
-      class="navigate-right-btn"
-      (click)="nextPage()"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="navigate-right-svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M15.75 19.5L8.25 12l7.5-7.5"
-        />
-      </svg>
-    </button>
-  </div>
+  <app-pagination-shared-componenet
+    *ngIf="awardsArray.length / itemsPerPage > 1"
+    [currentPage]="currentPage"
+    [itemsPerPage]="itemsPerPage"
+    [totalItems]="awardsArray.length"
+    [itemsContainer]="awardsContainer"
+    (pageChange)="onPageChange($event)"
+  ></app-pagination-shared-componenet>
 </div>

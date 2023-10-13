@@ -27,6 +27,11 @@ export class ResearchReportsContentRouteItemComponent implements OnDestroy {
   // current month for month filter
   currentMonth!: ResearchType[];
 
+  //#FFF PAGINATION
+  itemsToDisplay: ResearchType[] = [];
+  currentPage = 1;
+  itemsPerPage = 12;
+
   // subscriptions
   routesSubscription!: Subscription;
   monthBehaviurSubSubscription!: Subscription;
@@ -97,12 +102,17 @@ export class ResearchReportsContentRouteItemComponent implements OnDestroy {
     );
 
     this.arrayOfResearches.subscribe((arr) => {
+      this.itemsToDisplay = arr;
       if (arr.length < 1) {
         this.havResultsToDisplay = false;
       } else {
         this.havResultsToDisplay = true;
       }
     });
+  }
+
+  onPageChange(page: number) {
+    this.currentPage = page;
   }
 
   ngOnDestroy(): void {
