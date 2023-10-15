@@ -1,0 +1,11 @@
+<div
+  class="content-item"
+  [ngClass]="{ reversed: data.reversed, 'fade-in': isElementVisible }"
+>
+  <img class="content-item__item-1" src="{{ data.img }}" alt="{{ data.alt }}" />
+
+  <div class="content-item__item-2" class="text-box">
+    <h4>{{ data.title }}</h4>
+    <p>{{ data.text }}</p>
+  </div>
+</div>

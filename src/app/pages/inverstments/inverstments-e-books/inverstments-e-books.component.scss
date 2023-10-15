@@ -1,0 +1,31 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+// hero
+h2 {
+  font-size: b.$font-size-heading;
+}
+p {
+  font-size: b.$font-size-sub-heading;
+  width: 80%;
+  line-height: 25px;
+}
+
+// content
+.main-container {
+  width: b.$container-default-wudth;
+  margin: 0 auto;
+}
+
+.books-container {
+  margin: 0 0 8rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  column-gap: 2rem;
+  row-gap: 4rem;
+}
+
+.pagination-box {
+  transform: translateY(-8rem);
+}

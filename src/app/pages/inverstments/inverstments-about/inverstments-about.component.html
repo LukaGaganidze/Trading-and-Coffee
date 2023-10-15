@@ -1,0 +1,25 @@
+<!-- hero -->
+<app-page-hero
+  [backgrounUrl]="'../../../../assets/investments/about-inverstments/hero.jpg'"
+  [buttonContent]="''"
+  [inputLink]="''"
+>
+  <!-- content of the hero -->
+  <h2>Smart Investment Opportunities</h2>
+  <p>
+    At Coffee Coder Trading, we understand the importance of making informed
+    investment decisions. That's why we offer a range of investment
+    opportunities tailored to your financial goals and risk tolerance.
+  </p>
+</app-page-hero>
+
+<!-- content -->
+
+<div class="content-container">
+  <div class="items-container">
+    <app-inverstment-content-item
+      *ngFor="let item of itemsContent"
+      [data]="item"
+    ></app-inverstment-content-item>
+  </div>
+</div>

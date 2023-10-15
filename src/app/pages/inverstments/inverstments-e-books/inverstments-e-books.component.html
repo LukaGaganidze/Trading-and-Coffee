@@ -1,0 +1,46 @@
+<!-- hero -->
+<app-page-hero
+  [backgrounUrl]="'../../../../assets/investments/e-books/hero/hero.jpg'"
+  [buttonContent]="''"
+  [inputLink]="''"
+>
+  <!-- content of the hero -->
+  <h2>Sci-Fi Book Investments</h2>
+  <p>
+    At Coffee Coder Trading, we have a passion for innovation and the boundless
+    potential of the future. Our investments are driven by a deep appreciation
+    for the world of science fiction. We believe that within the pages of sci-fi
+    books lies a treasure trove of visionary ideas and unparalleled insights,
+    which can also translate into significant financial opportunities.
+  </p>
+</app-page-hero>
+
+<!-- control content -->
+<app-items-control></app-items-control>
+
+<!-- content -->
+<div #ebooksContainer class="main-container">
+  <div class="books-container">
+    <app-e-book-item
+      *ngFor="
+        let book of eBooksData.slice(
+          (currentPage - 1) * itemsPerPage,
+          currentPage * itemsPerPage
+        )
+      "
+      [eBookData]="book"
+    ></app-e-book-item>
+  </div>
+</div>
+
+<!-- pagination -->
+<div class="pagination-box">
+  <app-pagination-shared-componenet
+    *ngIf="eBooksData.length / itemsPerPage > 1"
+    [currentPage]="currentPage"
+    [itemsPerPage]="itemsPerPage"
+    [totalItems]="eBooksData.length"
+    [itemsContainer]="ebooksContainer"
+    (pageChange)="onPageChange($event)"
+  ></app-pagination-shared-componenet>
+</div>

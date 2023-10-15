@@ -2,7 +2,6 @@
 @use "../../../../global-styles/base" as b;
 
 .about-hero {
-  height: b.$hero-height;
   // background-image: linear-gradient(
   //     to right,
   //     rgba(0, 0, 0, 0.9),
@@ -12,21 +11,21 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
   color: a.$main-color-white;
-  position: relative;
 }
 
 .container {
-  max-width: b.$container-default-wudth;
   margin: 0 auto;
+  height: b.$hero-height;
+  max-width: b.$container-default-wudth;
+
+  display: flex;
 }
 
 .content {
-  width: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 4rem;
+  width: 50%;
 }

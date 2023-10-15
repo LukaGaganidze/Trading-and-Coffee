@@ -1,0 +1,46 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+// hero
+h2 {
+  font-size: b.$font-size-heading;
+}
+p {
+  font-size: b.$font-size-sub-heading;
+  width: 80%;
+  line-height: 25px;
+}
+
+.content {
+  text-align: center;
+  padding: 10rem 0;
+  & h2 {
+    text-transform: uppercase;
+    font-size: b.$font-size-heading;
+    margin-bottom: 3rem;
+  }
+
+  & a,
+  & a:link,
+  & a:visited {
+    color: a.$footer-link-color;
+    text-decoration: none;
+    transition: all 0.4s;
+
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin: 0 auto;
+
+    & svg {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  & a:hover,
+  & a:active {
+    color: rgba($color: a.$footer-link-color, $alpha: 0.7);
+    text-decoration: none;
+  }
+}

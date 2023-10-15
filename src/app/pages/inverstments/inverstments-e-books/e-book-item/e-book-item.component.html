@@ -1,0 +1,11 @@
+<span (click)="navigaetToItem(eBookData.id)" class="e-book">
+  <div class="e-book__img-container">
+    <img src="{{ eBookData.img }}" alt="{{ eBookData.alt }}" />
+  </div>
+
+  <div class="text-box">
+    <h4 class="text-box__title">{{ eBookData.title }}</h4>
+    <p class="text-box__date">{{ eBookData.date }}</p>
+    <p class="text-box__link">{{ eBookData.link }}</p>
+  </div>
+</span>

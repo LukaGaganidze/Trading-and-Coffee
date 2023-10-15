@@ -1,0 +1,43 @@
+@use "../../../../../global-styles/abstracts" as a;
+@use "../../../../../global-styles/base" as b;
+
+.e-book {
+  cursor: pointer;
+  background-color: a.$main-color-white;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.4s ease-in-out;
+  display: block;
+  text-decoration: none;
+  color: a.$text-color;
+
+  & h4 {
+    height: 2rem;
+    margin-bottom: 1rem;
+  }
+  & p {
+    color: a.$color-cmall-date;
+  }
+  & img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    transition: all 0.4s ease-in-out;
+    transform: scale(1.05);
+  }
+}
+
+.e-book:hover {
+  background-color: a.$main-color-white-gradient;
+  & img {
+    transform: scale(1.1);
+  }
+}
+
+.e-book__img-container {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}

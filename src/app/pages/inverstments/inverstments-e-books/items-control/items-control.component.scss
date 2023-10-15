@@ -1,0 +1,46 @@
+@use "../../../../../global-styles/abstracts" as a;
+@use "../../../../../global-styles/base" as b;
+
+// sec-heading
+.sec-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 5rem 5rem;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+
+  & h3 {
+    font-size: b.$font-size-heading;
+
+    & span {
+      color: a.$main-color-green;
+    }
+  }
+}
+
+.year-select-box {
+  border: solid a.$form-border-colod 1px;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 14rem;
+  color: a.$imput-color;
+  border-radius: 0.6rem;
+
+  select {
+    border: none;
+    transform: translateX(-3px);
+    color: a.$text-color;
+    cursor: pointer;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  & span {
+    letter-spacing: 1px;
+  }
+}

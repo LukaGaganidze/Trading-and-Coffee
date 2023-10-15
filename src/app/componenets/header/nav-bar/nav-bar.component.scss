@@ -217,3 +217,10 @@
     transform: rotate(180deg) !important;
   }
 }
+.nav-initial-link,
+.nav-initial-link:link,
+.nav-initial-link:visited {
+  padding: 0.5rem;
+  position: relative;
+  z-index: 1000000;
+}

@@ -1,0 +1,55 @@
+<div class="header-box"></div>
+
+<div class="container">
+  <!-- BOOK MAIN BOX -->
+
+  <div class="book-info-box">
+    <h2>{{ eBookData.title }}</h2>
+
+    <!-- BOOK IMAGE AND HEADER -->
+    <div class="book-and-header">
+      <div>
+        <div class="ebook-img-container">
+          <img
+            src="../../../../../assets/investments/e-books/e-books-page/ebook-cover.png"
+            alt="book covers"
+          />
+          <div
+            class="ebook-img-container__absol-img"
+            [style.background-image]="'url(' + eBookData.img + ')'"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-box">
+      <p>
+        Welcome to the "{{ eBookData.title }}" a world where neon illuminates
+        the streets, and humanity's struggle for survival intertwines with the
+        digital frontier. In this dystopian future, technology reigns supreme,
+        and society dances to the tune of corporations and hackers.
+      </p>
+      <p>
+        Within the pages of "{{ eBookData.title }}" you'll encounter antiheroes
+        and rebels, each navigating a cityscape that's a battleground of
+        high-tech augmentations and low-life intrigue. Here, cybernetic implants
+        blur the line between human and machine, and the boundary between
+        freedom and control is razor-thin.
+      </p>
+      <p>
+        is a visceral journey through a metropolis of constant flux, a place
+        where subversive hackers and rogue AI share the same digital playground.
+        This science fiction epic explores the fusion of human emotion and
+        artificial intelligence, where the question of what it means to be human
+        takes center stage in a world where identity is a precious commodity.
+      </p>
+    </div>
+  </div>
+
+  <div class="subscription-box">
+    <div class="subscription-box__content">
+      <span>Subscribe For Updates</span>
+      <app-green-button [content]="'SUBSCRIBE'"></app-green-button>
+    </div>
+  </div>
+</div>

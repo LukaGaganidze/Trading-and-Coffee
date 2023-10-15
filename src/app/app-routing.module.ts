@@ -13,6 +13,20 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/about-us/about.module').then((mod) => mod.AbouteModule),
   },
+  {
+    path: 'brokerage',
+    loadChildren: () =>
+      import('./pages/brokerage/brokerage-routing.module').then(
+        (mod) => mod.BrokerageRoutingModule
+      ),
+  },
+  {
+    path: 'investments',
+    loadChildren: () =>
+      import('./pages/inverstments/inverstments-routing.module').then(
+        (mod) => mod.InverstmentsRoutingModule
+      ),
+  },
 ];
 
 @NgModule({
