@@ -1,0 +1,32 @@
+<!-- hero -->
+<app-page-hero
+  [backgrounUrl]="'../../../../assets/inverstments-banking/landing/hero.jpg'"
+  [buttonContent]="''"
+  [inputLink]="''"
+>
+  <!-- content of the hero -->
+  <h2>Your Partner in Prosperity</h2>
+  <p>
+    Coffee Coder Trading is a respected name in investment banking, known for
+    precision, innovation, and integrity.
+  </p>
+  <p>
+    We prioritize transparency, diligence, and a client-centric approach. Our
+    expertise and insight ensure financial success for businesses, institutions,
+    and individuals. Choose Coffee Coder Trading for sophistication and
+    prosperity in investment banking.
+  </p>
+</app-page-hero>
+
+<!-- content -->
+
+<div class="content-cotainer">
+  <h2>ABOUT INVESTMENT BANKING</h2>
+
+  <div class="items-container">
+    <app-inverstment-banking-landing-item
+      *ngFor="let data of itemData"
+      [data]="data"
+    ></app-inverstment-banking-landing-item>
+  </div>
+</div>

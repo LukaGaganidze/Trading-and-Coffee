@@ -72,8 +72,8 @@
       </form>
 
       <!-- SELCTION YEAR -->
-      <div class="year-select-box">
-        <span>Year</span>
+      <div class="select-box">
+        <span class="select-type">Year</span>
         <select [(ngModel)]="selectYear" (change)="onFilterByYear($event)">
           <option value="all">All</option>
           <option value="2019">2019</option>
@@ -87,13 +87,13 @@
       <!-- SELCTION MONTH -->
 
       <!-- if year is not selected it is disabled -->
-      <div *ngIf="disabledMonthFilter" class="year-select-box disabled-select">
+      <div *ngIf="disabledMonthFilter" class="disabled-select">
         <span>Month</span>
         <div class="placeholder"></div>
       </div>
-      <div *ngIf="!disabledMonthFilter" class="year-select-box">
-        <span>Month</span>
 
+      <div *ngIf="!disabledMonthFilter" class="select-box">
+        <span class="select-type">Month</span>
         <select [(ngModel)]="selectedMonth" (change)="onFilterByMonth($event)">
           <option value="all">All</option>
           <option value="january">January</option>

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { SharedModule } from 'src/app/componenets/shared/shared.module';
 
@@ -32,7 +33,7 @@ import { TraderInfoComponent } from './trader-info/trader-info.component';
     // latest transactions section
     LatestTransactionsComponent,
   ],
-  imports: [SharedModule],
+  imports: [SharedModule, RouterModule],
   exports: [HomeComponent],
 })
 export class HomePageModule {}

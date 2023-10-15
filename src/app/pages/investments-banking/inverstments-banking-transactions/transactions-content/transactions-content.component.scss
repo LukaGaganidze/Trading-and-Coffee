@@ -1,0 +1,22 @@
+@use "../../../../../global-styles/abstracts" as a;
+@use "../../../../../global-styles/base" as b;
+
+.container {
+  background-color: a.$main-color-white-gradient;
+}
+
+.trans-container {
+  max-width: b.$container-default-wudth;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 3rem;
+  row-gap: 6rem;
+  padding: 5rem 0;
+
+  margin-bottom: 5rem;
+}
+
+.pag-container {
+  transform: translateY(-6rem);
+}

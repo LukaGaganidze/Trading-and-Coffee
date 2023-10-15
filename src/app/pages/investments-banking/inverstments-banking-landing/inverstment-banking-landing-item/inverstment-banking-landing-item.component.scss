@@ -1,0 +1,118 @@
+@use "../../../../../global-styles/abstracts" as a;
+@use "../../../../../global-styles/base" as b;
+
+.item-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding: 5rem;
+
+  & img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+
+  & .text-box {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: a.$main-color-white;
+    border: solid a.$form-border-colod 1px;
+    padding: 7rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateX(-5rem);
+
+    & h4 {
+      font-size: b.$font-size-sub-heading;
+      color: a.$main-color-green;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.item-container.reversed {
+  background-color: a.$main-color-white-gradient;
+  border-radius: 1rem;
+  & img {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    transform: translateX(-5rem);
+  }
+  & .text-box {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    transform: translateX(5rem);
+  }
+}
+
+.item-container.isVisible {
+  & img {
+    opacity: 1;
+    animation-name: fade-in-left;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+  }
+  & .text-box {
+    opacity: 1;
+    animation-name: fade-in-right;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+  }
+}
+.item-container.reversed.isVisible {
+  & img {
+    opacity: 1;
+    animation-name: fade-in-right;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+  }
+  & .text-box {
+    opacity: 1;
+    animation-name: fade-in-left;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(0rem);
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(-1rem);
+  }
+
+  90% {
+    transform: translateX(6rem);
+  }
+  100% {
+    transform: translateX(5rem);
+  }
+}
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(0rem);
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(1rem);
+  }
+  90% {
+    transform: translateX(-6rem);
+  }
+  100% {
+    transform: translateX(-5rem);
+  }
+}

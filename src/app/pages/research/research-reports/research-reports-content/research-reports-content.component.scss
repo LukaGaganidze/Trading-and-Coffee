@@ -93,26 +93,30 @@
 }
 
 // SELECTION
-.year-select-box {
-  border: solid a.$form-border-colod 1px;
-  padding: 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 14rem;
-  color: a.$imput-color;
-  border-radius: 0.6rem;
-  width: 70%;
+.select-box {
+  position: relative;
 
-  select {
-    border: none;
-    transform: translateX(-3px);
+  & .select-type {
+    position: absolute;
+    left: 1.5rem;
+    top: 1rem;
+    color: a.$text-color;
+    z-index: -1 !important;
+    cursor: default;
+  }
+
+  & select {
+    border: solid a.$imput-color-placeholder 1px;
     color: a.$text-color;
     cursor: pointer;
-    height: 2rem;
+    padding: 3rem 1.5rem;
+    padding-bottom: 1rem;
+    border-radius: 0.4rem;
+    width: 15rem;
+    background-color: transparent;
 
     &:focus {
-      border: none;
+      border: solid a.$imput-color-placeholder 1px;
       outline: none;
     }
   }
@@ -121,24 +125,19 @@
     letter-spacing: 1px;
   }
 }
-.year-select-box.disabled-select {
-  border: solid a.$form-border-colod 1px;
-  padding: 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 14rem;
-  color: a.$imput-color;
-  border-radius: 0.6rem;
-  width: 70%;
-  cursor: default;
 
-  .placeholder {
-    height: 2rem;
-  }
+.disabled-select {
+  border: solid a.$imput-color-placeholder 1px;
+  border-radius: 0.4rem;
+  height: 5.68rem;
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  width: 13.4rem;
 
   & span {
-    letter-spacing: 1px;
+    position: relative;
+    z-index: -1;
   }
 }
 

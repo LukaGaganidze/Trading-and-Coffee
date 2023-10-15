@@ -9,6 +9,7 @@ import { SliderItem } from '../types';
 export class ImageSliderComponent {
   @Input() slider: SliderItem[] = [];
   currentSlideIndex: number = 0;
+
   currentSlide!: SliderItem;
 
   ngOnInit() {

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="trans-container" #transactionsContainer>
+    <app-transactions-card
+      *ngFor="
+        let item of transacsArr.slice(
+          (currentPage - 1) * itemsPerPage,
+          currentPage * itemsPerPage
+        )
+      "
+      [transactionCardData]="item"
+      >test</app-transactions-card
+    >
+  </div>
+</div>
+
+<div class="pag-container">
+  <app-pagination-shared-componenet
+    *ngIf="transacsArr.length / itemsPerPage > 1"
+    [currentPage]="currentPage"
+    [itemsPerPage]="itemsPerPage"
+    [totalItems]="transacsArr.length"
+    [itemsContainer]="transactionsContainer"
+    (pageChange)="onPageChange($event)"
+  ></app-pagination-shared-componenet>
+</div>

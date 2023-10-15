@@ -24,6 +24,6 @@ export class EBookItemComponent {
   navigaetToItem(id: number) {
     this.eBookGuardSer.eBookPageValid();
     this.eBookSer.reactToGetExactItem(id);
-    this.router.navigate([this.eBookData.title], { relativeTo: this.route });
+    this.router.navigate(['investments', 'e-books', this.eBookData.title]);
   }
 }

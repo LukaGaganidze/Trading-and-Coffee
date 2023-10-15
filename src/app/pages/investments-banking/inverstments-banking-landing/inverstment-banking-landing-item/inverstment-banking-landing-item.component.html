@@ -1,0 +1,12 @@
+<div
+  class="item-container"
+  [ngClass]="{ reversed: data.left, isVisible: isElementVisible }"
+>
+  <img src="{{ data.img }}" alt="{{ data.alt }}" />
+
+  <div class="text-box">
+    <h4>{{ data.title }}</h4>
+    <p>{{ data.text1 }}</p>
+    <p>{{ data.text2 }}</p>
+  </div>
+</div>

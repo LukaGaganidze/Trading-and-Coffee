@@ -15,10 +15,13 @@
           <div [ngClass]="{ active: stateImg1 }" class="service__item-content">
             <h5>Brokerage Services</h5>
             <p>
-              Galt & Taggart is the largest brokerage house in Georgia, and one
-              of the leading in the region, that provides competitive...
+              Brokerage services involve intermediaries assisting clients in
+              trading various financial assets, like stocks and bonds.
             </p>
-            <app-green-button [content]="'READ MORE'"></app-green-button>
+            <app-green-button
+              [linkTo]="'brokerage/about-brokerage'"
+              [content]="'READ MORE'"
+            ></app-green-button>
           </div>
         </div>
 
@@ -33,10 +36,14 @@
           >
             <h5>Investment Banking</h5>
             <p>
-              Galt & Taggart is the leading investment bank in Georgia, taking
-              part in the biggest deals...
+              Investment banking services encompass financial firms aiding
+              businesses in raising capital, mergers and acquisitions, and
+              advisory services.
             </p>
-            <app-green-button [content]="'READ MORE'"></app-green-button>
+            <app-green-button
+              [linkTo]="'investments/e-books'"
+              [content]="'READ MORE'"
+            ></app-green-button>
           </div>
         </div>
 
@@ -51,10 +58,14 @@
           >
             <h5>Research</h5>
             <p>
-              We give the opportunity to get acquainted in detail with the most
-              recent reports on macroeconomic and sectorial researches
+              Research services involve in-depth analysis and data collection to
+              provide valuable insights and information. These services aid
+              decision-making and strategy development.
             </p>
-            <app-green-button [content]="'READ MORE'"></app-green-button>
+            <app-green-button
+              [linkTo]="'research/research-reports/all'"
+              [content]="'READ MORE'"
+            ></app-green-button>
           </div>
         </div>
       </div>

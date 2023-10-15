@@ -176,44 +176,41 @@
           <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
-              <a (click)="scrollToTop()" routerLink="#"
+              <a
+                (click)="scrollToTop()"
+                routerLink="investments-banking/about-investments-banking"
                 >About Investments Banking</a
               >
             </li>
             <li>
-              <a (click)="scrollToTop()" routerLink="#">Corporate Advisory</a>
-            </li>
-            <li>
-              <a (click)="scrollToTop()" routerLink="#">Capital Markets</a>
-            </li>
-            <li>
-              <a (click)="scrollToTop()" routerLink="#">Mezzanine Financing</a>
-            </li>
-            <li>
-              <a (click)="scrollToTop()" routerLink="#">Transactions</a>
+              <a
+                (click)="scrollToTop()"
+                routerLink="investments-banking/investments-banking-transactions"
+                >Transactions</a
+              >
             </li>
           </div>
         </ul>
-        <a class="nav-initial-link" (click)="scrollToTop()" routerLink="#"
+        <a
+          class="nav-initial-link"
+          (click)="scrollToTop()"
+          routerLink="investments-banking"
           >Inverstment Banking</a
         >
       </li>
 
       <!-- Media -->
-      <li
+      <!-- <li
         class="nav-list"
         (mouseenter)="showDropdownMedia()"
         (mouseleave)="hideDropdownMedia()"
         [ngClass]="{ active: stateValueMedia }"
       >
-        <!-- dropdown menu box -->
         <ul class="drop-down">
-          <!-- triangle -->
           <li class="triangle-box">
             <div id="triangle"></div>
           </li>
 
-          <!-- dropdown menu -->
           <div class="drop-down__list-box">
             <li>
               <a (click)="scrollToTop()" routerLink="#">Press Releases</a>
@@ -229,7 +226,7 @@
         <a class="nav-initial-link" (click)="scrollToTop()" routerLink="#"
           >Media</a
         >
-      </li>
+      </li> -->
 
       <!-- green button -->
       <li>

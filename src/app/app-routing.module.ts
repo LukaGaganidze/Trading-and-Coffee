@@ -27,6 +27,13 @@ const routes: Routes = [
         (mod) => mod.InverstmentsRoutingModule
       ),
   },
+  {
+    path: 'investments-banking',
+    loadChildren: () =>
+      import(
+        './pages/investments-banking/investments-banking-routing.module'
+      ).then((mod) => mod.InvestmentsBankingRoutingModule),
+  },
 ];
 
 @NgModule({

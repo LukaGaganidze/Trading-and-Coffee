@@ -16,6 +16,7 @@ import { ResearchPageModule } from './pages/research/research.module';
 import { AppComponent } from './app.component';
 import { BrokerageModule } from './pages/brokerage/brokerage.module';
 import { InverstmentsModule } from './pages/inverstments/inverstments.module';
+import { InvestmentsBankingModule } from './pages/investments-banking/investments-banking.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,6 +36,7 @@ import { InverstmentsModule } from './pages/inverstments/inverstments.module';
     ResearchPageModule,
     BrokerageModule,
     InverstmentsModule,
+    InvestmentsBankingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

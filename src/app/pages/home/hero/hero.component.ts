@@ -11,26 +11,26 @@ export class HeroComponent {
     {
       url: '../../../../../assets/home/hero/slider-img-0.jpg',
       title: 'hero image',
-      heading: 'GT native trading app has been updated',
+      heading: 'CCT - Your Investment Opportunities',
       subHeading:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse vel nesciunt quae labore commodi. Voluptatum nesciunt natus nemo modi alias',
-      linkTo: '#',
+        'The world of investment possibilities with Coffee Coder Trading. We offer a wide range of investment options to help you grow your wealth and achieve your financial goals. Discover your next investment opportunity today.',
+      linkTo: 'investments/about-investments',
     },
     {
       url: '../../../../../assets/home/hero/slider-img-1.jpg',
       title: 'hero image',
-      heading: 'The best investment bank in Georgia',
+      heading: 'Coffee Coder Trading Team',
       subHeading:
-        'Lorem ipsum dolor sit  consectetur adipisicing elit. Esse vel nesciunt quae labore commodi.  nesciunt natus nemo modi alias',
-      linkTo: '#',
+        'Get to know the passionate individuals behind Coffee Coder Trading. Our team of experts is committed to bringing the perfect blend of coffee and trading to your fingertips. Discover the faces driving our innovative platform.',
+      linkTo: '/about/our-team',
     },
     {
       url: '../../../../../assets/home/hero/slider-img-2.jpg',
       title: 'hero image',
-      heading: 'With us inversting is accessable for everyone ',
+      heading: 'Our Research Services',
       subHeading:
-        'Lorem ipsum dolor sit amet consectetur  elit. Esse vel nesciunt quae labore commodi. nesciunt natus nemo modi ',
-      linkTo: '#',
+        'Experience the synergy of coffee and sound financial strategy through our investment banking services. At Coffee Coder Trading, we provide the tools and expertise you need to take your investments to the next level.',
+      linkTo: 'research/about-research',
     },
   ];
 }

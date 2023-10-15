@@ -1,0 +1,38 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+// hero
+h2 {
+  font-size: b.$font-size-heading;
+}
+p {
+  font-size: b.$font-size-sub-heading;
+  width: 80%;
+  line-height: 25px;
+}
+
+// content
+
+.content-container {
+  max-width: b.$container-default-wudth;
+  margin: 10rem auto;
+
+  & .items-container {
+    padding: 0 10rem;
+  }
+}
+
+.content-cotainer {
+  width: b.$container-default-wudth;
+  margin: 0 auto;
+
+  // hero
+  h2 {
+    font-size: b.$font-size-heading;
+    color: a.$main-color-green;
+  }
+}
+
+.content-cotainer {
+  padding: 8rem 0;
+}
