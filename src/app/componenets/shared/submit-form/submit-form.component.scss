@@ -1,0 +1,221 @@
+@use "../../../../global-styles/abstracts" as a;
+@use "../../../../global-styles/base" as b;
+
+.form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000000;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.form {
+  background-color: a.$main-color-white;
+  display: unset;
+  width: 40rem;
+  overflow-y: scroll;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+
+  &::-webkit-scrollbar {
+    width: 2rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px a.$main-color-white;
+    -webkit-box-shadow: inset 0 0 6px a.$main-color-white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: a.$text-color;
+    outline: 1px solid a.$text-color;
+  }
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: a.$text-color;
+  padding: 2rem;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: a.$footer-background-color;
+  border-bottom: solid a.$imput-color-placeholder 1px;
+  margin-bottom: 0.5rem;
+  border: solid a.$main-color-white 2px;
+
+  & svg {
+    cursor: pointer;
+    width: 3rem;
+  }
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  padding: 2rem;
+
+  & input,
+  & select {
+    padding: 1.7rem;
+    font-size: b.$font-size-sub-heading;
+    color: a.$imput-color;
+    border: solid a.$imput-color-placeholder 1px;
+    border-radius: 0.4rem;
+    outline: none;
+  }
+
+  & input:focus,
+  & select:focus {
+    font-size: b.$font-size-sub-heading;
+    color: a.$imput-color;
+    outline: none;
+    border: solid a.$imput-color-placeholder 1px;
+  }
+  & input:hover,
+  & select:hover,
+  & input:active,
+  & select:active {
+    border: solid #000 1px;
+  }
+}
+
+// checkbox
+.checkbox-box {
+  &__header {
+    font-size: b.$font-size-sub-heading;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: b.$font-size-sub-heading;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: a.$headin-transparent-background;
+  width: max-content;
+}
+
+.container {
+  transform: translateX(5rem);
+}
+
+.container:nth-child(2) {
+  transform: translateX(0rem);
+}
+.container:last-child {
+  transform: translateX(0rem);
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: a.$main-color-white-gradient;
+  border-radius: 0.1rem;
+  border: solid a.$form-border-colod 1px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: a.$main-color-green;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: a.$main-color-green;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid a.$main-color-white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+// green button
+.button-link-green {
+  display: block;
+  padding: 1.7rem 2rem;
+  border-radius: 0.5rem;
+  background-color: a.$main-color-green;
+  color: a.$main-color-white !important;
+  text-decoration: none;
+  transition: all 0.4s;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.button-link-green:hover,
+.button-link-green:active {
+  background-color: a.$main-color-green-shade;
+  color: a.$main-color-white !important;
+}
+
+.button-link-green:disabled {
+  background-color: a.$imput-color-placeholder;
+  color: a.$main-color-white !important;
+  cursor: not-allowed;
+}
+
+.form-container.active-form-bc {
+  opacity: 1;
+  visibility: visible;
+}
+.form-container.inactive-form-bc {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0.5s;
+}
+
+.form.active-form {
+  transform: translateX(0);
+}

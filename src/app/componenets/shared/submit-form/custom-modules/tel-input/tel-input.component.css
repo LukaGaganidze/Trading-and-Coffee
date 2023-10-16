@@ -1,0 +1,53 @@
+span {
+  opacity: 0;
+
+  transition: opacity 200ms;
+}
+
+:host.floating span {
+  opacity: 1;
+}
+
+.iti {
+  width: 100%;
+
+  max-width: 100%;
+}
+
+input {
+  border: none;
+}
+
+::ng-deep .iti.iti--allow-dropdown input {
+  margin-left: 8px;
+}
+
+::ng-deep .iti .iti__flag-container .iti__selected-flag,
+::ng-deep .iti .iti__flag-container .iti__selected-flag:hover {
+  background-color: transparent;
+}
+
+::ng-deep .iti .iti__flag-container .iti__selected-flag {
+  padding-right: 6px;
+
+  border-right: 1px solid #e3e3e3;
+
+  height: 18px;
+}
+
+::ng-deep .iti .iti__flag-container .iti__selected-flag .iti_custom_arrow i {
+  margin-top: 4px;
+
+  margin-left: 4px;
+
+  font-size: 16px;
+}
+
+.input {
+  font-size: 1.6rem;
+  color: #999;
+}
+.input:focus {
+  border: none;
+  outline: none;
+}

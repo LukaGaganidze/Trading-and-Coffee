@@ -6,12 +6,13 @@ import { AboutWahtWoDoModule } from './landing-page/what-we-do.module';
 
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutAwardsModule } from './awards/about-awards.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [],
   imports: [
     ReactiveFormsModule,
-
+    BrowserAnimationsModule,
     AboutRoutingModule,
 
     AboutWahtWoDoModule,

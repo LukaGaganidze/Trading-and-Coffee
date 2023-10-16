@@ -229,15 +229,12 @@
       </li> -->
 
       <!-- green button -->
-      <li>
-        <app-green-button
-          [linkTo]="'#'"
-          [content]="'SUBSCRIBE'"
-        ></app-green-button>
+      <li (click)="activateSubForm()">
+        <app-green-button [content]="'SUBSCRIBE'"></app-green-button>
       </li>
 
       <!-- white button -->
-      <li
+      <!-- <li
         (mouseenter)="showDropdownClientLogIn()"
         (mouseleave)="hideDropdownClientLogIn()"
         class="white-button-container nav-list"
@@ -261,9 +258,7 @@
             />
           </svg>
         </button>
-        <!-- dropdown menu box -->
         <ul class="drop-down-btn">
-          <!-- dropdown menu -->
           <div class="drop-down-btn__list-box">
             <li>
               <a routerLink="#">TRADER</a>
@@ -273,7 +268,7 @@
             </li>
           </div>
         </ul>
-      </li>
+      </li> -->
     </ul>
   </nav>
 </div>

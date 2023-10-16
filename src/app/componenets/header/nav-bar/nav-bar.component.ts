@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { NavbarServviceService } from './navbar-servvice.service';
-
+import { SubmitFormServiceService } from '../../shared/submit-form/submit-form-service.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -29,7 +29,10 @@ export class NavBarComponent implements OnInit, OnDestroy {
   private subscriptionMedia!: Subscription;
   private subscriptionClientLogIn!: Subscription;
 
-  constructor(private navService: NavbarServviceService) {}
+  constructor(
+    private navService: NavbarServviceService,
+    private formSubSer: SubmitFormServiceService
+  ) {}
 
   ngOnInit(): void {
     // #fff
@@ -140,6 +143,11 @@ export class NavBarComponent implements OnInit, OnDestroy {
       top: 0,
       behavior: 'smooth', // Enable smooth scrolling
     });
+  }
+
+  // form
+  activateSubForm() {
+    this.formSubSer.toFormActiveState();
   }
 
   ngOnDestroy() {

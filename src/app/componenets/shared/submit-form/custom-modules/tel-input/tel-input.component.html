@@ -1,0 +1,13 @@
+<input
+  class="input"
+  type="tel"
+  #telInput
+  (input)="onInput()"
+  (focus)="onFocus()"
+  (focusout)="onFocusOut($event)"
+  (countrychange)="onCountryChange()"
+  [disabled]="disabled"
+  [attr.aria-describedby]="userAriaDescribedBy"
+  [attr.aria-labelledby]="parentFormField.getLabelId()"
+  placeholder="Phone"
+/>

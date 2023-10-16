@@ -11,7 +11,9 @@ const routes: Routes = [
   {
     path: 'about',
     loadChildren: () =>
-      import('./pages/about-us/about.module').then((mod) => mod.AbouteModule),
+      import('./pages/about-us/about-routing.module').then(
+        (mod) => mod.AboutRoutingModule
+      ),
   },
   {
     path: 'brokerage',

@@ -13,6 +13,11 @@ import { AwardCardComponent } from './award-card/award-card.component';
 import { ResearchCardComponent } from './research-card/research-card.component';
 import { PaginationSharedComponenetComponent } from './pagination-shared-componenet/pagination-shared-componenet.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { TelInputModule } from './submit-form/custom-modules/tel-input/tel-input.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { SubmitFormComponent } from './submit-form/submit-form.component';
+
 @NgModule({
   declarations: [
     GreenButtonComponent,
@@ -24,9 +29,17 @@ import { PaginationSharedComponenetComponent } from './pagination-shared-compone
     AwardCardComponent,
     ResearchCardComponent,
     PaginationSharedComponenetComponent,
+    SubmitFormComponent,
   ],
 
-  imports: [RouterLink, CommonModule, RouterModule],
+  imports: [
+    RouterLink,
+    CommonModule,
+    RouterModule,
+    ReactiveFormsModule,
+    TelInputModule,
+    MatFormFieldModule,
+  ],
 
   exports: [
     GreenButtonComponent,
@@ -39,6 +52,8 @@ import { PaginationSharedComponenetComponent } from './pagination-shared-compone
     AwardCardComponent,
     ResearchCardComponent,
     PaginationSharedComponenetComponent,
+    // TelInputModule,
+    SubmitFormComponent,
   ],
 })
 export class SharedModule {}
