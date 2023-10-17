@@ -1,9 +1,10 @@
 <div class="container">
   <h2>LATEST TRANSACTIONS</h2>
   <div class="cards-container">
-    <app-transactions-card
-      *ngFor="let card of cardsArray"
-      [transactionCardData]="card"
-    ></app-transactions-card>
+    <div class="cards-container__card" *ngFor="let card of cardsArray">
+      <app-transactions-card
+        [transactionCardData]="card"
+      ></app-transactions-card>
+    </div>
   </div>
 </div>

@@ -28,6 +28,7 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 3rem;
 }
+
 .heading-box {
   display: flex;
   align-items: center;
@@ -47,5 +48,117 @@
   & a:hover,
   & a:active {
     color: a.$imput-color;
+  }
+}
+
+@media (max-width: 1430px) {
+  .container-parent {
+    transform: translateY(0rem);
+  }
+
+  .container {
+    background-color: a.$text-color;
+    margin-left: 0;
+    border-radius: 0;
+  }
+
+  .latest-reports {
+    color: a.$main-color-white;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+@media (max-width: 950px) {
+  .container {
+    & h2 {
+      font-size: b.$font-size-heading-950;
+    }
+  }
+
+  .heading-box {
+    & a,
+    & a:link,
+    & a:visited {
+      font-size: b.$font-size-sub-heading-950;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .container {
+    & h2 {
+      font-size: b.$font-size-heading-750;
+      margin: 0;
+    }
+  }
+
+  .heading-box {
+    & a,
+    & a:link,
+    & a:visited {
+      font-size: b.$font-size-sub-heading-750;
+    }
+  }
+}
+@media (max-width: 700px) {
+  .container-parent {
+    transform: translateY(0rem);
+  }
+
+  .container {
+    background-color: a.$text-color;
+    margin-left: 0;
+    border-radius: 0;
+  }
+
+  .latest-reports {
+    color: a.$main-color-white;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    & h2 {
+      font-size: b.$font-size-heading-500;
+    }
+  }
+
+  .heading-box {
+    padding-top: 2rem;
+    & a,
+    & a:link,
+    & a:visited {
+      font-size: b.$font-size-sub-heading-500;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 0 1.5rem;
+    padding-bottom: 2rem;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    & h2 {
+      font-size: b.$font-size-heading-400;
+    }
+  }
+
+  .heading-box {
+    & a,
+    & a:link,
+    & a:visited {
+      font-size: b.$font-size-sub-heading-400;
+    }
   }
 }

@@ -9,7 +9,7 @@
 }
 .main-footer {
   margin: 0 auto;
-  width: b.$container-large-width;
+  max-width: b.$container-large-width;
 
   & ul {
     display: grid;

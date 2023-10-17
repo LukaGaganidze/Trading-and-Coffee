@@ -18,3 +18,25 @@
   background-color: a.$main-color-green-shade;
   color: a.$main-color-white !important;
 }
+
+@media (max-width: 950px) {
+  // green button
+  .button-link-green,
+  .button-link-green:link,
+  .button-link-green:visited {
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 750px) {
+  // green button
+  .button-link-green,
+  .button-link-green:link,
+  .button-link-green:visited {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+  }
+}

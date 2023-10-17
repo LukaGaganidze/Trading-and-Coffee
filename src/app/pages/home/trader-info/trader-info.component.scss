@@ -1,6 +1,7 @@
 @use "../../../../global-styles/abstracts" as a;
 @use "../../../../global-styles/base" as b;
 .coantainer {
+  padding: 0 1.5rem;
   background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.6),
@@ -16,7 +17,7 @@
 }
 
 .content {
-  width: b.$container-default-wudth;
+  max-width: b.$container-default-wudth;
   margin: 0 auto;
   padding: 10rem 0;
   color: a.$main-color-white;
@@ -28,5 +29,58 @@
 
   & p {
     margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .content {
+    padding: 7rem 0;
+    & h2 {
+      font-size: b.$font-size-heading-950;
+      margin-bottom: 3rem;
+    }
+
+    & p {
+      font-size: b.$font-size-sub-heading-950;
+      margin-bottom: 2rem;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .content {
+    padding: 5rem 0;
+    & h2 {
+      font-size: b.$font-size-heading-750;
+      margin-bottom: 2rem;
+    }
+
+    & p {
+      font-size: b.$font-size-sub-heading-750;
+      margin-bottom: 1rem;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .content {
+    padding: 5rem 0;
+    & h2 {
+      font-size: b.$font-size-heading-500;
+    }
+
+    & p {
+      font-size: b.$font-size-sub-heading-500;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .content {
+    padding: 5rem 0;
+    & h2 {
+      font-size: b.$font-size-heading-400;
+    }
+
+    & p {
+      font-size: b.$font-size-sub-heading-400;
+    }
   }
 }

@@ -2,10 +2,10 @@
 @use "../../../../global-styles/base" as b;
 
 .container {
-  padding: 7rem 0;
+  padding: 7rem 1.5rem;
   & h2 {
     margin: 0 auto;
-    width: b.$container-default-wudth;
+    max-width: b.$container-default-wudth;
     font-size: b.$font-size-heading;
     margin-bottom: 3rem;
   }
@@ -15,6 +15,64 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 3rem;
     margin: 0 auto;
-    width: b.$container-large-width;
+    max-width: b.$container-large-width;
+  }
+}
+
+@media (max-width: 1180px) {
+  .container {
+    & .card-container {
+      column-gap: 1rem;
+    }
+  }
+}
+@media (max-width: 1120px) {
+  .container {
+    & .card-container {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 2rem;
+    }
+  }
+}
+@media (max-width: 950px) {
+  .container {
+    padding: 5rem 1.5rem;
+    & h2 {
+      font-size: b.$font-size-heading-950;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .container {
+    padding: 4rem 1.5rem;
+    & h2 {
+      margin: 0 auto;
+      max-width: b.$container-default-wudth;
+      font-size: b.$font-size-heading-750;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    & .card-container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    padding: 3rem 1.5rem;
+    & h2 {
+      font-size: b.$font-size-heading-500;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    padding: 2rem 1.5rem;
+    & h2 {
+      margin: 0 auto;
+      font-size: b.$font-size-heading-400;
+    }
   }
 }

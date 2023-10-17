@@ -3,19 +3,20 @@
 
 // main container
 .container {
-  width: 100%;
   background-color: transparent;
   display: flex;
   align-content: center;
   background-color: transparent;
-  padding: 1rem 0;
+  padding: 1rem 1.5rem;
 
   transition: all 0.5s;
+  max-width: b.$container-default-wudth;
+  margin: 0 auto;
 }
 
 // navbar includes logo navigation links/sub links and buttons
 .navbar {
-  width: b.$container-default-wudth;
+  width: 100%;
   margin: 0 auto;
   color: a.$main-color-white;
   position: relative;
@@ -29,7 +30,7 @@
 // container change on scroll
 .container.scrolled {
   background-color: a.$headin-transparent-background;
-  padding: 2rem 0;
+  padding: 2rem 1.5rem;
 }
 
 // main logo
@@ -223,4 +224,43 @@
   padding: 0.5rem;
   position: relative;
   z-index: 1000000;
+}
+
+.burger-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+
+  & span {
+    display: block;
+    background-color: a.$main-color-white;
+    height: 0.3rem;
+    width: 2rem;
+    border-radius: 0.8rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .navigation-desktop {
+    display: none;
+  }
+  .container {
+    padding: 0.5rem 2rem;
+  }
+  // main logo
+  .main-logo {
+    width: 10rem;
+    display: block;
+  }
+
+  .burger-menu-btn {
+    display: flex;
+  }
+
+  // container change on scroll
+  .container.scrolled {
+    background-color: a.$headin-transparent-background;
+    padding: 0.8rem 2rem;
+  }
 }

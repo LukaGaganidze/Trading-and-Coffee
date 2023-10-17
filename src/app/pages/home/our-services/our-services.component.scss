@@ -8,6 +8,7 @@
   max-width: b.$container-large-width;
   margin: 0 auto;
   padding-bottom: 8rem;
+  padding: 0 1.5rem;
 }
 .service {
   & h2 {
@@ -21,6 +22,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
+    padding-bottom: 2rem;
   }
 
   &__img {
@@ -82,5 +84,101 @@
         rgb(0, 0, 0, 1)
       ),
       url("../../../../assets/home/our-services/img3.jpg");
+  }
+}
+
+@media (max-width: 1060px) {
+  .service {
+    &__item-content {
+      gap: 0rem;
+    }
+  }
+}
+@media (max-width: 950px) {
+  .service {
+    & h2 {
+      font-size: b.$font-size-heading-950;
+    }
+    &__item-content {
+      transform: translateY(4rem);
+    }
+
+    &__img {
+      & h5 {
+        font-size: b.$font-size-sub-heading-950 !important;
+        letter-spacing: 2px;
+      }
+      & p {
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+        font-size: b.$card-secondary-tect-resp;
+        line-height: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 750px) {
+  .service {
+    & h2 {
+      font-size: b.$font-size-heading-750;
+      padding: 3rem 0 0 0;
+    }
+    &__item-content {
+      transform: translateY(4rem);
+    }
+
+    &__img {
+      & h5 {
+        font-size: b.$font-size-sub-heading-750 !important;
+        letter-spacing: 2px;
+      }
+      & p {
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+        font-size: b.$card-secondary-tect-resp-s;
+        line-height: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .service {
+    &__grid {
+      height: 50rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    & h2 {
+      font-size: b.$font-size-heading-500 !important;
+    }
+
+    &__img {
+      & h5 {
+        font-size: b.$font-size-sub-heading-500 !important;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
+        color: a.$main-color-green;
+        font-weight: 600;
+      }
+
+      & p {
+        line-height: 12px;
+      }
+    }
+  }
+}
+@media (max-width: 400px) {
+  .service {
+    & h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    &__img {
+      & p {
+        margin-bottom: 1.5rem;
+      }
+    }
   }
 }

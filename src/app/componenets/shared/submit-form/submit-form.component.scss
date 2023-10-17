@@ -138,11 +138,12 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
+
   background-color: a.$main-color-white-gradient;
-  border-radius: 0.1rem;
   border: solid a.$form-border-colod 1px;
+  border-radius: 0.5rem;
 }
 
 /* On mouse-over, add a grey background color */

@@ -3,7 +3,6 @@
 
 //  slider container
 .slider {
-  width: 100%;
   height: b.$hero-height;
   background-position: center;
   background-repeat: no-repeat;
@@ -14,11 +13,12 @@
   // slider content ( text and navigation buttons )
   &__content {
     position: relative;
-    width: b.$container-default-wudth;
+    max-width: b.$container-default-wudth;
     margin: 0 auto;
     color: a.$main-color-white;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    padding: 0 1.5rem;
 
     // text
     &__text {
@@ -46,6 +46,7 @@
   right: 0;
   display: flex;
   gap: 2rem;
+  padding: 0 1.5rem;
 }
 
 // navigation buttons
@@ -62,11 +63,112 @@
   border-radius: 50%;
 }
 
-// arrow left
-// .arrow-left {
-// }
-
 // arrow right
 .arrow-right {
   transform: rotate(180deg);
+}
+
+@media (max-width: 950px) {
+  .slider {
+    padding-top: 7rem;
+    height: 280px;
+  }
+  .slider__content {
+    grid-template-columns: 2fr 1fr;
+    &__text {
+      gap: 0rem;
+      & h2 {
+        font-size: b.$font-size-heading-950;
+        line-height: 35px;
+        height: 7rem;
+      }
+
+      & p {
+        font-size: b.$font-size-sub-heading-950;
+        line-height: 20px;
+        height: 11rem;
+      }
+    }
+  }
+
+  // navigation buttons
+  .arrow {
+    height: 1rem;
+    width: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .slider__content {
+    &__text {
+      gap: 0rem;
+      & h2 {
+        font-size: b.$font-size-heading-750;
+        line-height: 25px;
+        margin-bottom: 0;
+      }
+
+      & p {
+        font-size: b.$font-size-sub-heading-750;
+        line-height: 17px;
+        height: 8rem;
+      }
+    }
+    .nav-buttons {
+      gap: 0.8rem;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .slider {
+    padding-top: 3rem;
+    height: 280px;
+  }
+  .slider__content {
+    &__text {
+      gap: 0rem;
+      & h2 {
+        font-size: b.$font-size-heading-500;
+        line-height: 18px;
+        height: 5rem;
+      }
+
+      & p {
+        font-size: b.$font-size-sub-heading-500;
+        line-height: 12px;
+        height: 6rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .slider {
+    padding-top: 3rem;
+    height: 240px;
+  }
+  .slider__content {
+    &__text {
+      width: 100%;
+      & h2 {
+        display: block;
+        font-size: b.$font-size-heading-400;
+        line-height: 18px;
+      }
+
+      & p {
+        height: 0rem;
+        & span {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .slider {
+    &__content {
+      width: 100%;
+    }
+  }
 }

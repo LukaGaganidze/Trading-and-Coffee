@@ -2,7 +2,12 @@
   class="form-container"
   [ngClass]="{ 'active-form-bc': formActive,  'inactive-form-bc': !formActive, }"
 >
-  <form class="form" [ngClass]="{ 'active-form': formActive }">
+  <form
+    [formGroup]="submitionForm"
+    (ngSubmit)="onSubmition()"
+    class="form"
+    [ngClass]="{ 'active-form': formActive }"
+  >
     <!-- form header -->
     <div class="form-header">
       <span>Subscribe to our news</span>
@@ -25,84 +30,86 @@
 
     <div class="inputs-container">
       <!-- first name -->
-      <input placeholder="First Name" />
+      <input formControlName="firstname" placeholder="First Name" />
 
       <!-- last name -->
-      <input placeholder="Last Name" />
+      <input formControlName="lastname" placeholder="Last Name" />
 
       <!-- email -->
-      <input type="email" name="" placeholder="Email" />
+      <input formControlName="email" type="email" name="" placeholder="Email" />
 
       <!-- industry -->
-      <select>
+      <select formControlName="industry">
         <option value="industry">Industry</option>
       </select>
 
       <!-- Country -->
-      <select>
-        <option value="Country">Country</option>
+      <select formControlName="country">
+        <option value="country">Country</option>
       </select>
 
       <!-- Company -->
-      <input placeholder="Company" />
+      <input formControlName="company" placeholder="Company" />
 
       <!-- Position -->
-      <input placeholder="Position" />
+      <input formControlName="position" placeholder="Position" />
 
       <!-- phone -->
       <mat-form-field appearance="outline" class="w-100">
         <!-- <mat-label>Phone Number</mat-label> -->
-        <app-tel-input formControlName="phoneNumber" required></app-tel-input>
+        <app-tel-input formControlName="phoneNumber"></app-tel-input>
         <!-- <mat-error class="mt-3"> Please enter a valid phone number </mat-error> -->
       </mat-form-field>
 
-      <!-- Sunscribe to -->
-      <div class="checkbox-box">
+      <!-- Checkboxes -->
+      <div formArrayName="checkboxes" class="checkbox-box">
         <div class="checkbox-box__header">Subscribe to:</div>
-        <!-- research -->
-        <label class="container"
-          >Research
-          <input type="checkbox" value="research" />
+
+        <label class="container">
+          Check Research
+          <input formControlName="0" type="checkbox" />
           <span class="checkmark"></span>
         </label>
 
-        <!-- research -->
-        <label class="container"
-          >Macroeconomics
-          <input type="checkbox" value="macroeconomics" />
+        <label class="container">
+          Macroeconomics
+          <input formControlName="1" type="checkbox" />
           <span class="checkmark"></span>
         </label>
 
-        <!-- research -->
-        <label class="container"
-          >Sector Research
-          <input type="checkbox" value="sectorresearch" />
+        <label class="container">
+          Sector Research
+          <input formControlName="2" type="checkbox" />
           <span class="checkmark"></span>
         </label>
 
-        <!-- research -->
-        <label class="container"
-          >Financial Market
-          <input type="checkbox" value="financialmarket" />
+        <label class="container">
+          Financial Market
+          <input formControlName="3" type="checkbox" />
           <span class="checkmark"></span>
         </label>
 
-        <!-- research -->
-        <label class="container"
-          >Weekly Updates
-          <input type="checkbox" value="weeklyupdates" />
+        <label class="container">
+          Weekly Updates
+          <input formControlName="4" type="checkbox" />
           <span class="checkmark"></span>
         </label>
 
-        <!-- research -->
-        <label class="container"
-          >Brokerage
-          <input type="checkbox" value="Brokerage" />
+        <label class="container">
+          Brokerage
+          <input formControlName="5" type="checkbox" />
           <span class="checkmark"></span>
         </label>
       </div>
 
-      <button class="button-link-green" routerLink="">SUBMIT</button>
+      <button
+        type="submit"
+        class="button-link-green"
+        routerLink=""
+        [disabled]="submitionForm.invalid"
+      >
+        SUBMIT
+      </button>
     </div>
   </form>
 </div>

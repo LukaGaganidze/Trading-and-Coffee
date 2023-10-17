@@ -3,9 +3,12 @@
 
 .container {
   padding-bottom: 8rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
   & h2 {
     margin: 0 auto;
-    width: b.$container-default-wudth;
+    max-width: b.$container-default-wudth;
     font-size: b.$font-size-heading;
     margin-bottom: 3rem;
   }
@@ -13,8 +16,69 @@
 
 .cards-container {
   margin: 0 auto;
-  width: b.$container-large-width;
+  max-width: b.$container-large-width;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 2rem;
+}
+
+@media (max-width: 950px) {
+  .container {
+    padding-bottom: 8rem;
+
+    & h2 {
+      margin: 0 auto;
+      font-size: b.$font-size-heading-950;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+    &__card:last-child {
+      display: none;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .container {
+    // padding-bottom: 8rem;
+
+    & h2 {
+      margin: 0 auto;
+      font-size: b.$font-size-heading-750;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3rem;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    // padding-bottom: 8rem;
+
+    & h2 {
+      margin: 0 auto;
+      font-size: b.$font-size-heading-500;
+      margin-bottom: 2rem;
+    }
+  }
+  .cards-container {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    // padding-bottom: 8rem;
+
+    & h2 {
+      margin: 0 auto;
+      font-size: b.$font-size-heading-400;
+      margin-bottom: rem;
+    }
+  }
 }

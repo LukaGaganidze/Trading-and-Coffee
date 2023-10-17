@@ -46,3 +46,12 @@
     color: a.$imput-color;
   }
 }
+@media (max-width: 310px) {
+  .card {
+    & h3 {
+      margin-bottom: 0;
+      line-height: 24px;
+      height: 8rem;
+    }
+  }
+}
