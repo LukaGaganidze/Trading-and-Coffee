@@ -2,14 +2,14 @@
 @use "../../../../global-styles/base" as b;
 
 // hero
-h2 {
+.hero-heading {
   font-size: b.$font-size-heading;
 }
-p {
-  font-size: b.$font-size-sub-heading;
-  width: 80%;
-  line-height: 25px;
-}
+// p {
+//   font-size: b.$font-size-sub-heading;
+//   width: 80%;
+//   line-height: 25px;
+// }
 
 .content {
   text-align: center;
@@ -42,5 +42,99 @@ p {
   & a:active {
     color: rgba($color: a.$footer-link-color, $alpha: 0.7);
     text-decoration: none;
+  }
+}
+
+@media (max-width: 950px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-950;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-950;
+    max-width: 80%;
+    line-height: 25px;
+  }
+
+  .content {
+    padding: 7rem 0;
+    & h2 {
+      text-transform: uppercase;
+      font-size: b.$font-size-heading-950;
+      margin-bottom: 2rem;
+    }
+
+    & a,
+    & aLlink,
+    & a:visited {
+      font-size: b.$font-size-sub-heading-950;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-750;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-750;
+    max-width: 80%;
+    line-height: 18px;
+  }
+
+  .content {
+    padding: 5rem 0;
+    & h2 {
+      text-transform: uppercase;
+      font-size: b.$font-size-heading-750;
+      margin-bottom: 2rem;
+    }
+    & a,
+    & aLlink,
+    & a:visited {
+      font-size: b.$font-size-sub-heading-750;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-500;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-500;
+    max-width: 100%;
+  }
+  .content {
+    padding: 5rem 0;
+    & h2 {
+      text-transform: uppercase;
+      font-size: b.$font-size-heading-500;
+      margin-bottom: 2rem;
+    }
+    & a,
+    & aLlink,
+    & a:visited {
+      font-size: b.$font-size-sub-heading-500;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-400;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-400;
+    max-width: 100%;
+  }
+  .content {
+    padding: 4rem 0;
+    & h2 {
+      text-transform: uppercase;
+      font-size: b.$font-size-heading-400;
+      margin-bottom: 2rem;
+    }
+    & a,
+    & aLlink,
+    & a:visited {
+      font-size: b.$font-size-sub-heading-400;
+    }
   }
 }

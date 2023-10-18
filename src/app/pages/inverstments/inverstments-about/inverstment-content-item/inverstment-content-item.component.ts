@@ -19,7 +19,7 @@ export class InverstmentContentItemComponent {
     const options = {
       root: null, // Use the viewport as the root
       rootMargin: '0px', // No margin around the root
-      threshold: 0.5, // Trigger when 50% of the element is in the viewport
+      threshold: 0.2, // Trigger when 50% of the element is in the viewport
     };
 
     this.observer = new IntersectionObserver((entries) => {

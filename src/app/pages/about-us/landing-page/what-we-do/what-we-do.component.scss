@@ -2,11 +2,11 @@
 @use "../../../../../global-styles/base" as b;
 
 .what-we-do-container {
-  width: b.$container-default-wudth;
+  max-width: b.$container-default-wudth;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  padding: 10rem 0rem 10rem 0;
+  padding: 10rem 1.5rem;
   column-gap: 4rem;
 }
 
@@ -39,5 +39,93 @@
     display: inline-block;
     width: 1em;
     margin-left: -1em;
+  }
+}
+
+@media (max-width: 950px) {
+  .what-we-do-container {
+    padding: 5rem 1.5rem;
+    column-gap: 2rem;
+  }
+
+  .header {
+    font-size: b.$font-size-heading-950;
+    margin-bottom: 3rem;
+  }
+
+  .text,
+  .text-ul {
+    font-size: b.$card-secondary-tect-resp;
+  }
+  .main-text {
+    gap: 1rem;
+    font-size: b.$font-size-sub-heading-950;
+  }
+}
+@media (max-width: 750px) {
+  .what-we-do-container {
+    padding: 5rem 1.5rem;
+    column-gap: 2rem;
+    grid-template-columns: 1fr;
+
+    & p {
+      margin-bottom: 0;
+    }
+  }
+
+  .text,
+  .text-ul {
+    font-size: b.$card-secondary-tect-resp;
+  }
+
+  .main-text {
+    gap: 1rem;
+    font-size: b.$font-size-sub-heading-750;
+    margin-bottom: 3rem;
+  }
+  .header {
+    font-size: b.$font-size-heading-750;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .what-we-do-container {
+    padding: 3rem 1.5rem;
+    column-gap: 2rem;
+    grid-template-columns: 1fr;
+
+    & p {
+      margin-bottom: 0;
+    }
+  }
+  .main-text {
+    gap: 1rem;
+    font-size: b.$font-size-sub-heading-500 !important;
+    margin-bottom: 3rem;
+  }
+  .header {
+    font-size: b.$font-size-heading-500;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 400px) {
+  .what-we-do-container {
+    padding: 3rem 1.5rem;
+    column-gap: 2rem;
+    grid-template-columns: 1fr;
+
+    & p {
+      margin-bottom: 0;
+    }
+  }
+  .main-text {
+    gap: 1rem;
+    font-size: b.$font-size-sub-heading-400 !important;
+    margin-bottom: 3rem;
+  }
+  .header {
+    font-size: b.$font-size-heading-400;
+    margin-bottom: 0;
   }
 }

@@ -97,3 +97,60 @@
   background-color: a.$main-color-green-shade;
   color: a.$main-color-white;
 }
+
+@media (max-width: 950px) {
+  .sub-form {
+    & h5 {
+      font-size: b.$font-size-sub-heading-950;
+    }
+    & input,
+    & select,
+    & .button-link-green,
+    & .button-link-green:link,
+    & .button-link-green:visited {
+      font-size: b.$font-size-sub-heading-950;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .sub-form {
+    & h5 {
+      font-size: b.$font-size-sub-heading-950;
+    }
+    & input,
+    & select,
+    & .button-link-green,
+    & .button-link-green:link,
+    & .button-link-green:visited {
+      font-size: b.$font-size-sub-heading-750;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .sub-form {
+    & h5 {
+      font-size: b.$font-size-sub-heading-950;
+    }
+    & input,
+    & select,
+    & .button-link-green,
+    & .button-link-green:link,
+    & .button-link-green:visited {
+      font-size: b.$font-size-sub-heading-500;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .sub-form {
+    & h5 {
+      font-size: b.$font-size-sub-heading-950;
+    }
+    & input,
+    & select,
+    & .button-link-green,
+    & .button-link-green:link,
+    & .button-link-green:visited {
+      font-size: b.$font-size-sub-heading-400;
+    }
+  }
+}

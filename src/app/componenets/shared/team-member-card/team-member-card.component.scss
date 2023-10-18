@@ -29,22 +29,45 @@
   text-transform: uppercase;
   font-size: b.$font-size-sub-heading;
   letter-spacing: 1px;
-  height: 2rem;
-  margin-bottom: 2rem;
+  height: 4rem;
 }
 
 .position {
   color: a.$imput-color;
-  margin-bottom: 1.5rem;
+  height: 4rem;
 }
 
-.contact-link-box {
+.contact-link-box,
+.contact-link-box:link,
+.contact-link-box:visited {
   display: flex;
   gap: 1rem;
   align-items: center;
   width: max-content;
-  height: 2rem;
+  height: 2.5rem;
   &:not(:last-child) {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .card {
+    padding: 1rem;
+    & svg {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  .header {
+    font-size: b.$font-size-sub-heading-750;
+  }
+  .position {
+    font-size: b.$font-size-sub-heading-750;
+  }
+
+  .contact-link-box,
+  .contact-link-box:link,
+  .contact-link-box:visited {
+    font-size: b.$font-size-sub-heading-750;
   }
 }

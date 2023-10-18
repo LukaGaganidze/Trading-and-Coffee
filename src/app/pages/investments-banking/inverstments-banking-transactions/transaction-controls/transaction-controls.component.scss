@@ -5,6 +5,7 @@
 .sec-heading {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5rem 5rem;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
@@ -13,6 +14,7 @@
 
   & h3 {
     font-size: b.$font-size-heading;
+    margin-bottom: 0;
 
     & span {
       color: a.$main-color-green;
@@ -50,5 +52,46 @@
 
   & span {
     letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 950px) {
+  .sec-heading {
+    padding: 3rem 2rem;
+    & h3 {
+      font-size: b.$font-size-heading-950;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .sec-heading {
+    & h3 {
+      font-size: b.$font-size-heading-750;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .sec-heading {
+    justify-content: flex-end;
+    padding: 3rem 1.5rem 2rem 1.5rem;
+
+    .select-box {
+      transform: scale(0.8) translateX(1.8rem);
+    }
+    & h3 {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .sec-heading {
+    padding: 2.5rem 1.5rem 1.8rem 1.5rem;
+
+    & h3 {
+      display: none;
+    }
   }
 }

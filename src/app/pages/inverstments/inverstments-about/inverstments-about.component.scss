@@ -2,10 +2,10 @@
 @use "../../../../global-styles/base" as b;
 
 // hero
-h2 {
+.hero-heading {
   font-size: b.$font-size-heading;
 }
-p {
+.hero-sub-heading {
   font-size: b.$font-size-sub-heading;
   width: 80%;
   line-height: 25px;
@@ -19,5 +19,52 @@ p {
 
   & .items-container {
     padding: 0 10rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-950;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-950;
+    max-width: 80%;
+    line-height: 25px;
+  }
+}
+@media (max-width: 750px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-750;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-750;
+    max-width: 80%;
+    line-height: 18px;
+  }
+
+  .content-container {
+    margin: 5rem auto;
+
+    & .items-container {
+      padding: 0 1.5rem;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-500;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-500;
+    max-width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-400;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-400;
+    max-width: 100%;
   }
 }

@@ -12,13 +12,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   color: a.$main-color-white;
+  padding: 0 1.5rem;
 }
 
 .container {
   margin: 0 auto;
   height: b.$hero-height;
   max-width: b.$container-default-wudth;
-
   display: flex;
 }
 
@@ -28,4 +28,45 @@
   justify-content: center;
   gap: 4rem;
   width: 50%;
+}
+
+@media (max-width: 950px) {
+  .container {
+    height: b.$hero-height-950;
+  }
+  .content {
+    padding-top: 2rem;
+    gap: 1rem;
+    width: 80%;
+  }
+  .content {
+    padding-top: 2rem;
+    gap: 1rem;
+    width: 100%;
+  }
+}
+@media (max-width: 750px) {
+  .container {
+    height: b.$hero-height-750;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    height: b.$hero-height-500;
+  }
+  .content {
+    padding-top: 2rem;
+    gap: 1rem;
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    height: b.$hero-height-400;
+  }
+  .content {
+    padding-top: 2rem;
+    gap: 1rem;
+    width: 100%;
+  }
 }

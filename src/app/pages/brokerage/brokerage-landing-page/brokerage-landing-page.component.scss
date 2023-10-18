@@ -2,10 +2,10 @@
 @use "../../../../global-styles/base" as b;
 
 // hero
-h2 {
+.hero-heading {
   font-size: b.$font-size-heading;
 }
-p {
+.hero-sub-heading {
   font-size: b.$font-size-sub-heading;
   width: 80%;
   line-height: 25px;
@@ -15,7 +15,7 @@ p {
 .content-container {
   margin: 0 auto;
   max-width: b.$container-default-wudth;
-  padding: 8rem 0;
+  padding: 8rem 1.5rem;
 }
 
 .first-texy-box {
@@ -97,6 +97,230 @@ p {
     & li {
       border-bottom: solid a.$text-color 1px;
       transform: translateY(0.1rem);
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  // list grid
+  .grid-table {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    & li:first-child {
+      border-bottom: none;
+      transform: translateY(1rem);
+      background-color: transparent;
+    }
+
+    & ul {
+      padding: 0;
+
+      & li {
+        padding: 1rem;
+        font-size: b.$font-size-sub-heading-950 !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-950;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-950;
+    max-width: 80%;
+    line-height: 25px;
+  }
+
+  .content-container {
+    font-size: b.$font-size-sub-heading-950;
+  }
+  .first-texy-box {
+    & h2 {
+      font-size: b.$font-size-heading-950;
+      margin-bottom: 2rem;
+    }
+
+    & p {
+      margin-bottom: 3rem;
+    }
+  }
+  .second-texy-box {
+    & h4 {
+      font-size: b.$font-size-sub-heading-950;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-750;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-750;
+    max-width: 80%;
+    line-height: 18px;
+  }
+  // comtent
+  .content-container {
+    padding: 4rem 1.5rem;
+  }
+  .content-container {
+    font-size: b.$font-size-sub-heading-750;
+  }
+  .first-texy-box {
+    & h2 {
+      font-size: b.$font-size-heading-750;
+      margin-bottom: 2rem;
+    }
+
+    & p {
+      margin-bottom: 3rem;
+    }
+  }
+  .second-texy-box {
+    & h4 {
+      font-size: b.$font-size-sub-heading-750;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  // list grid
+  .grid-table {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    & li:first-child {
+      border-bottom: none;
+      transform: translateY(1rem);
+      background-color: transparent;
+    }
+
+    & ul {
+      padding: 0;
+
+      & li {
+        padding: 1rem;
+        font-size: b.$font-size-sub-heading-750 !important;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-500;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-500;
+    max-width: 100%;
+  }
+
+  .content-container {
+    padding: 4rem 1.5rem;
+  }
+  .content-container {
+    font-size: b.$font-size-sub-heading-500;
+  }
+  .first-texy-box {
+    & h2 {
+      font-size: b.$font-size-heading-500;
+      margin-bottom: 2rem;
+    }
+
+    & p {
+      margin-bottom: 3rem;
+    }
+  }
+  .second-texy-box {
+    & h4 {
+      font-size: b.$font-size-sub-heading-500;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 0rem;
+    }
+  }
+  // list grid
+  .grid-table {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    & li:first-child {
+      border-bottom: none;
+      transform: translateY(1rem);
+      background-color: transparent;
+    }
+
+    & ul {
+      padding: 0;
+
+      & li {
+        padding: 1rem;
+        font-size: b.$font-size-sub-heading-500 !important;
+      }
+    }
+  }
+}
+@media (max-width: 400px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-400;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-400;
+    max-width: 100%;
+  }
+
+  .content-container {
+    padding: 4rem 1.5rem;
+  }
+  .content-container {
+    font-size: b.$font-size-sub-heading-400;
+  }
+  .first-texy-box {
+    & h2 {
+      font-size: b.$font-size-heading-400;
+      margin-bottom: 2rem;
+    }
+
+    & p {
+      margin-bottom: 3rem;
+    }
+  }
+  .second-texy-box {
+    & h4 {
+      font-size: b.$font-size-sub-heading-400;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 0rem;
     }
   }
 }

@@ -2,9 +2,9 @@
 @use "../../../../../global-styles/base" as b;
 
 .container {
-  width: b.$container-default-wudth;
+  max-width: b.$container-default-wudth;
   margin: auto;
-  padding: 8rem 0;
+  padding: 8rem 1.5rem;
 }
 .header-box {
   display: flex;
@@ -52,4 +52,54 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3.5rem;
+}
+
+@media (max-width: 1250px) {
+  .team-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem;
+  }
+}
+@media (max-width: 950px) {
+  .container {
+    padding: 4rem 1.5rem;
+  }
+  .header-box {
+    margin-bottom: 2rem;
+    h2 {
+      font-size: b.$font-size-heading-950;
+    }
+  }
+}
+
+@media (max-width: 870px) {
+  .team-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem;
+  }
+}
+@media (max-width: 750px) {
+  .header-box {
+    h2 {
+      font-size: b.$font-size-heading-750;
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .team-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+@media (max-width: 500px) {
+  .header-box {
+    justify-content: flex-end;
+    h2 {
+      display: none;
+    }
+  }
 }

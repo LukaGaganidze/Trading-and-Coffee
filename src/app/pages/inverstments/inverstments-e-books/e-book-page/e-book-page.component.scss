@@ -18,8 +18,8 @@
 // vontent container
 .container {
   margin: 0 auto;
-  width: b.$container-default-wudth;
-  padding: 10rem 0;
+  max-width: b.$container-default-wudth;
+  padding: 10rem 1.5rem;
 
   display: grid;
   grid-template-columns: 3fr 1.5fr;
@@ -118,5 +118,116 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .subscription-box {
+    display: none;
+  }
+}
+@media (max-width: 950px) {
+  .container {
+    margin: 0 auto;
+    max-width: b.$container-default-wudth;
+    padding: 5rem 1.5rem;
+  }
+
+  .book-info-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0rem;
+
+    & h2 {
+      font-size: b.$font-size-heading-950;
+    }
+
+    & img {
+      width: 35rem;
+      height: auto;
+    }
+  }
+
+  .text-box {
+    font-size: b.$font-size-sub-heading-950;
+  }
+
+  .subscription-box {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .container {
+    margin: 0 auto;
+    max-width: b.$container-default-wudth;
+    padding: 5rem 1.5rem;
+  }
+
+  .book-info-box {
+    display: flex;
+    flex-direction: column;
+
+    & h2 {
+      font-size: b.$font-size-heading-750;
+    }
+
+    & img {
+      width: 35rem;
+      height: auto;
+    }
+  }
+
+  .text-box {
+    font-size: b.$font-size-sub-heading-750;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    margin: 0 auto;
+    max-width: b.$container-default-wudth;
+    padding: 5rem 1.5rem;
+  }
+
+  .book-info-box {
+    display: flex;
+    flex-direction: column;
+
+    & h2 {
+      font-size: b.$font-size-heading-500;
+    }
+
+    & img {
+      width: 23rem;
+      height: auto;
+    }
+  }
+
+  // image container
+  .ebook-img-container {
+    position: relative;
+
+    &__absol-img {
+      position: absolute;
+      width: 109.9px !important;
+      height: 12rem;
+
+      left: 54.8px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.5;
+      clip-path: polygon(0% 5%, 100% 0%, 100% 100%, 0% 96%);
+
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .text-box {
+    font-size: b.$font-size-sub-heading-500;
   }
 }

@@ -45,7 +45,11 @@
 
     <div class="search-tools">
       <!-- INPUT BOX -->
-      <form [formGroup]="inputForm" (ngSubmit)="onSubmitInputForm()">
+      <form
+        class="input-form"
+        [formGroup]="inputForm"
+        (ngSubmit)="onSubmitInputForm()"
+      >
         <div class="input-box">
           <button type="submit" class="search-btn">
             <svg

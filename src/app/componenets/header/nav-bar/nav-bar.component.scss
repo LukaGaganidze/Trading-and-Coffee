@@ -1,13 +1,17 @@
 @use "../../../../global-styles/abstracts" as a;
 @use "../../../../global-styles/base" as b;
 
+.background {
+  transition: all 0.5s;
+  padding: 1rem 1.5rem;
+}
+
 // main container
 .container {
   background-color: transparent;
   display: flex;
   align-content: center;
   background-color: transparent;
-  padding: 1rem 1.5rem;
 
   transition: all 0.5s;
   max-width: b.$container-default-wudth;
@@ -28,7 +32,7 @@
 }
 
 // container change on scroll
-.container.scrolled {
+.background.scrolled {
   background-color: a.$headin-transparent-background;
   padding: 2rem 1.5rem;
 }
@@ -245,9 +249,7 @@
   .navigation-desktop {
     display: none;
   }
-  .container {
-    padding: 0.5rem 2rem;
-  }
+
   // main logo
   .main-logo {
     width: 10rem;
@@ -257,10 +259,18 @@
   .burger-menu-btn {
     display: flex;
   }
+}
 
-  // container change on scroll
-  .container.scrolled {
+@media (max-width: 500px) {
+  // main logo
+  .main-logo {
+    width: 8rem;
+  }
+  .background {
+    padding: 0.7rem 1.5rem 0.5rem 0.8rem;
+  }
+  .background.scrolled {
     background-color: a.$headin-transparent-background;
-    padding: 0.8rem 2rem;
+    padding: 1rem 1.5rem 1rem 0.8rem;
   }
 }

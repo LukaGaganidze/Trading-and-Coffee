@@ -50,3 +50,10 @@
 .res-learn-more-link:visited {
   color: a.$footer-link-color;
 }
+
+@media (max-width: 500px) {
+  .res-header {
+    font-size: b.$font-size-sub-heading-750;
+    height: 4rem;
+  }
+}

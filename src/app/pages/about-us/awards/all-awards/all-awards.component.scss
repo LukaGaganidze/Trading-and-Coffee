@@ -8,6 +8,7 @@
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
   background-color: a.$main-color-white;
+  padding: 0 1.5rem;
 }
 
 // sec-heading
@@ -138,5 +139,44 @@
     cursor: default;
     background-color: a.$main-color-green;
     color: a.$main-color-white;
+  }
+}
+
+@media (max-width: 1320px) {
+  .section-container {
+    max-width: b.$container-default-wudth;
+    margin: 0 auto;
+    transform: translateY(0);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding-bottom: 7rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .awards-container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+  }
+}
+@media (max-width: 950px) {
+  .sec-heading {
+    display: flex;
+    justify-content: flex-end;
+    padding: 3rem 0 2rem 0;
+  }
+}
+
+@media (max-width: 570px) {
+  .awards-container {
+    grid-template-columns: 1fr;
+  }
+  .sec-heading {
+    justify-content: flex-end;
+    padding: 3rem 0 2rem 0;
+  }
+  .year-select-box {
+    transform: scale(0.8) translateX(1.5rem);
   }
 }

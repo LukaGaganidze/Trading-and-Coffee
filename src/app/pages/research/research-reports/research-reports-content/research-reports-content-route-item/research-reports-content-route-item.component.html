@@ -20,12 +20,15 @@
     No Research Reports Found
   </div>
   <!-- pagination -->
-  <app-pagination-shared-componenet
-    *ngIf="itemsToDisplay.length / itemsPerPage > 1"
-    [currentPage]="currentPage"
-    [itemsPerPage]="itemsPerPage"
-    [totalItems]="itemsToDisplay.length"
-    [itemsContainer]="researchContainer"
-    (pageChange)="onPageChange($event)"
-  ></app-pagination-shared-componenet>
+
+  <div class="pagi-box">
+    <app-pagination-shared-componenet
+      *ngIf="itemsToDisplay.length / itemsPerPage > 1"
+      [currentPage]="currentPage"
+      [itemsPerPage]="itemsPerPage"
+      [totalItems]="itemsToDisplay.length"
+      [itemsContainer]="researchContainer"
+      (pageChange)="onPageChange($event)"
+    ></app-pagination-shared-componenet>
+  </div>
 </div>

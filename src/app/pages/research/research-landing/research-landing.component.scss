@@ -2,10 +2,10 @@
 @use "../../../.././global-styles/base" as b;
 
 // hero
-h2 {
+.hero-heading {
   font-size: b.$font-size-heading;
 }
-p {
+.hero-sub-heading {
   font-size: b.$font-size-sub-heading;
   width: 80%;
   line-height: 25px;
@@ -15,6 +15,7 @@ p {
 .latest-reports {
   margin: 0 auto 8rem auto;
   max-width: b.$container-default-wudth;
+  padding: 0 1.5rem;
 
   & h3 {
     font-size: b.$font-size-heading;
@@ -76,8 +77,164 @@ p {
   & span {
     color: a.$footer-link-color;
     cursor: pointer;
+    display: flex;
+    transform: translateY(0.5rem);
   }
 }
 .card-cntainer:not(:last-child) {
   border-right: solid a.$imput-color 1px;
+}
+
+@media (max-width: 950px) {
+  .latest-reports {
+    font-size: b.$font-size-sub-heading-950;
+
+    & li {
+      & span {
+        font-size: b.$font-size-sub-heading-950;
+      }
+    }
+  }
+  .hero-heading {
+    font-size: b.$font-size-heading-950;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-950;
+    max-width: 80%;
+    line-height: 25px;
+  }
+
+  .latest-reports {
+    & h3 {
+      font-size: b.$font-size-heading-950 !important;
+    }
+  }
+
+  .research-coverage-list {
+    &__heading {
+      font-size: b.$font-size-sub-heading-950;
+    }
+  }
+  .costumer-research-box__heading {
+    font-size: b.$font-size-sub-heading-950 !important;
+  }
+
+  .cntainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .latest-reports {
+    font-size: b.$font-size-sub-heading-750;
+    margin-bottom: 4rem;
+
+    & li {
+      & span {
+        font-size: b.$font-size-sub-heading-750;
+      }
+    }
+  }
+  .hero-heading {
+    font-size: b.$font-size-heading-750;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-750;
+    max-width: 80%;
+    line-height: 25px;
+  }
+
+  .latest-reports {
+    & h3 {
+      font-size: b.$font-size-heading-750 !important;
+      margin: 3rem 0 2rem 0;
+    }
+  }
+
+  .research-coverage-list {
+    &__heading {
+      font-size: b.$font-size-sub-heading-750;
+    }
+  }
+  .costumer-research-box__heading {
+    font-size: b.$font-size-sub-heading-750 !important;
+  }
+}
+@media (max-width: 500px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-500;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-500;
+    max-width: 80%;
+    line-height: 18px;
+  }
+
+  .latest-reports {
+    font-size: b.$font-size-sub-heading-500;
+    line-height: 15px;
+
+    & ul {
+      padding-left: 2rem;
+    }
+
+    & li {
+      line-height: 15px;
+      & span {
+        font-size: b.$font-size-sub-heading-500;
+      }
+    }
+  }
+
+  .latest-reports {
+    & h3 {
+      font-size: b.$font-size-heading-500 !important;
+    }
+  }
+
+  .research-coverage-list {
+    &__heading {
+      font-size: b.$font-size-sub-heading-500;
+    }
+  }
+  .costumer-research-box__heading {
+    font-size: b.$font-size-sub-heading-500 !important;
+  }
+
+  .cntainer {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 400px) {
+  .hero-heading {
+    font-size: b.$font-size-heading-400;
+  }
+  .hero-sub-heading {
+    font-size: b.$font-size-sub-heading-400;
+    max-width: 80%;
+  }
+  .latest-reports {
+    font-size: b.$font-size-sub-heading-400;
+
+    & li {
+      & span {
+        font-size: b.$font-size-sub-heading-400;
+      }
+    }
+  }
+
+  .latest-reports {
+    & h3 {
+      font-size: b.$font-size-heading-400 !important;
+    }
+  }
+
+  .research-coverage-list {
+    &__heading {
+      font-size: b.$font-size-sub-heading-400;
+    }
+  }
+  .costumer-research-box__heading {
+    font-size: b.$font-size-sub-heading-400 !important;
+  }
 }

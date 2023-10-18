@@ -5,6 +5,7 @@
 .sec-heading {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5rem 5rem;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
@@ -13,6 +14,7 @@
 
   & h3 {
     font-size: b.$font-size-heading;
+    margin-bottom: 0;
 
     & span {
       color: a.$main-color-green;
@@ -50,5 +52,46 @@
 
   & span {
     letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 950px) {
+  .sec-heading {
+    padding: 4rem 1.5rem;
+
+    & h3 {
+      font-size: b.$font-size-heading-950;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .sec-heading {
+    padding: 4rem 1.5rem;
+
+    & h3 {
+      font-size: b.$font-size-heading-750;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .sec-heading {
+    padding: 2rem 1.5rem;
+    justify-content: center;
+
+    & h3 {
+      display: none;
+      font-size: b.$font-size-heading-500;
+    }
+  }
+  .select-box {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 400px) {
+  .sec-heading {
+    padding: 4rem 1.5rem;
   }
 }

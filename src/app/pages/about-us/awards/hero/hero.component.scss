@@ -9,3 +9,41 @@ p {
   width: 80%;
   line-height: 25px;
 }
+@media (max-width: 950px) {
+  h2 {
+    font-size: b.$font-size-heading-950;
+  }
+  p {
+    font-size: b.$font-size-sub-heading-950;
+    max-width: 80%;
+    line-height: 25px;
+  }
+}
+@media (max-width: 750px) {
+  h2 {
+    font-size: b.$font-size-heading-750;
+  }
+  p {
+    font-size: b.$font-size-sub-heading-750;
+    max-width: 80%;
+    line-height: 18px;
+  }
+}
+@media (max-width: 500px) {
+  h2 {
+    font-size: b.$font-size-heading-500;
+  }
+  p {
+    font-size: b.$font-size-sub-heading-500;
+    max-width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  h2 {
+    font-size: b.$font-size-heading-400;
+  }
+  p {
+    font-size: b.$font-size-sub-heading-400;
+    max-width: 100%;
+  }
+}

@@ -3,6 +3,7 @@
 
 .container {
   background-color: a.$main-color-white-gradient;
+  padding: 0 1.5rem;
 }
 
 .trans-container {
@@ -19,4 +20,58 @@
 
 .pag-container {
   transform: translateY(-6rem);
+}
+
+@media (max-width: 1100px) {
+  .trans-container {
+    column-gap: 1rem;
+    row-gap: 4rem;
+    padding: 4rem 0;
+  }
+}
+@media (max-width: 950px) {
+  .trans-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 750px) {
+  .trans-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .trans-container {
+    padding: 4rem 10rem;
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 450px) {
+  .trans-container {
+    padding: 4rem 8rem;
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 400px) {
+  .trans-container {
+    padding: 4rem 6rem;
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 350px) {
+  .trans-container {
+    padding: 4rem;
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 300px) {
+  .trans-container {
+    padding: 4rem 2rem;
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 250px) {
+  .trans-container {
+    padding: 4rem 0rem;
+    grid-template-columns: 1fr;
+  }
 }
