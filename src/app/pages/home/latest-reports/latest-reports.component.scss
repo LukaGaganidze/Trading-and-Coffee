@@ -4,6 +4,7 @@
 .container-parent {
   transform: translateY(-8rem);
   position: relative;
+  margin-bottom: 2rem;
 }
 
 .container {
@@ -54,6 +55,7 @@
 @media (max-width: 1430px) {
   .container-parent {
     transform: translateY(0rem);
+    margin-bottom: 6rem;
   }
 
   .container {
@@ -88,6 +90,9 @@
 }
 
 @media (max-width: 750px) {
+  .container-parent {
+    margin-bottom: 4rem;
+  }
   .container {
     & h2 {
       font-size: b.$font-size-heading-750;
@@ -142,6 +147,9 @@
 }
 
 @media (max-width: 500px) {
+  .container-parent {
+    margin-bottom: 2rem;
+  }
   .container {
     padding: 0 1.5rem;
     padding-bottom: 2rem;

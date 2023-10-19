@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TelInputModule } from './submit-form/custom-modules/tel-input/tel-input.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SubmitFormComponent } from './submit-form/submit-form.component';
+import { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SubmitFormComponent } from './submit-form/submit-form.component';
     ResearchCardComponent,
     PaginationSharedComponenetComponent,
     SubmitFormComponent,
+    MobileNavigationComponent,
   ],
 
   imports: [
@@ -52,8 +54,8 @@ import { SubmitFormComponent } from './submit-form/submit-form.component';
     AwardCardComponent,
     ResearchCardComponent,
     PaginationSharedComponenetComponent,
-    // TelInputModule,
     SubmitFormComponent,
+    MobileNavigationComponent,
   ],
 })
 export class SharedModule {}

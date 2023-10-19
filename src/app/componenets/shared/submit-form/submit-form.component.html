@@ -10,7 +10,7 @@
   >
     <!-- form header -->
     <div class="form-header">
-      <span>Subscribe to our news</span>
+      <span class="form-main-header">Subscribe to our news</span>
       <svg
         (click)="closeForm()"
         xmlns="http://www.w3.org/2000/svg"
@@ -36,30 +36,43 @@
       <input formControlName="lastname" placeholder="Last Name" />
 
       <!-- email -->
-      <input formControlName="email" type="email" name="" placeholder="Email" />
-
-      <!-- industry -->
-      <select formControlName="industry">
-        <option value="industry">Industry</option>
-      </select>
-
-      <!-- Country -->
-      <select formControlName="country">
-        <option value="country">Country</option>
-      </select>
-
-      <!-- Company -->
-      <input formControlName="company" placeholder="Company" />
-
-      <!-- Position -->
-      <input formControlName="position" placeholder="Position" />
-
+      <input
+        class="inpu-after-number"
+        formControlName="email"
+        type="email"
+        name=""
+        placeholder="Email"
+      />
       <!-- phone -->
-      <mat-form-field appearance="outline" class="w-100">
+      <mat-form-field appearance="outline">
         <!-- <mat-label>Phone Number</mat-label> -->
         <app-tel-input formControlName="phoneNumber"></app-tel-input>
         <!-- <mat-error class="mt-3"> Please enter a valid phone number </mat-error> -->
       </mat-form-field>
+
+      <!-- industry -->
+      <select class="inpu-after-number" formControlName="industry">
+        <option value="industry">Industry</option>
+      </select>
+
+      <!-- Country -->
+      <select class="inpu-after-number" formControlName="country">
+        <option value="country">Country</option>
+      </select>
+
+      <!-- Company -->
+      <input
+        class="inpu-after-number"
+        formControlName="company"
+        placeholder="Company"
+      />
+
+      <!-- Position -->
+      <input
+        class="inpu-after-number"
+        formControlName="position"
+        placeholder="Position"
+      />
 
       <!-- Checkboxes -->
       <div formArrayName="checkboxes" class="checkbox-box">
@@ -105,7 +118,7 @@
       <button
         type="submit"
         class="button-link-green"
-        routerLink=""
+        (click)="closeForm()"
         [disabled]="submitionForm.invalid"
       >
         SUBMIT

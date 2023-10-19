@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { NavbarServviceService } from './navbar-servvice.service';
 import { SubmitFormServiceService } from '../../shared/submit-form/submit-form-service.service';
 import { Subscription } from 'rxjs';
+import { MobileNavService } from '../../shared/mobile-navigation/mobile-nav.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -31,7 +32,8 @@ export class NavBarComponent implements OnInit, OnDestroy {
 
   constructor(
     private navService: NavbarServviceService,
-    private formSubSer: SubmitFormServiceService
+    private formSubSer: SubmitFormServiceService,
+    private mobileNavSer: MobileNavService
   ) {}
 
   ngOnInit(): void {
@@ -80,6 +82,10 @@ export class NavBarComponent implements OnInit, OnDestroy {
       this.navService.clientLogInBSubject.subscribe((state) => {
         this.stateValueClientLogIn = state;
       });
+  }
+
+  openNav() {
+    this.mobileNavSer.activateNavigation();
   }
 
   // #fff About Us

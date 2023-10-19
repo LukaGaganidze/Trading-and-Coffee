@@ -2,6 +2,7 @@
 @use "../../../../global-styles/base" as b;
 .services-container {
   background-color: a.$main-color-white-gradient;
+  margin-bottom: 6rem;
 }
 
 .servicess-width-cntainer {
@@ -118,6 +119,9 @@
   }
 }
 @media (max-width: 750px) {
+  .services-container {
+    margin-bottom: 4rem;
+  }
   .service {
     & h2 {
       font-size: b.$font-size-heading-750;
@@ -142,6 +146,9 @@
   }
 }
 @media (max-width: 500px) {
+  .services-container {
+    margin-bottom: 3rem;
+  }
   .service {
     &__grid {
       height: 50rem;

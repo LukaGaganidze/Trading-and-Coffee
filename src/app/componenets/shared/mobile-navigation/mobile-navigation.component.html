@@ -1,0 +1,237 @@
+<div
+  class="mobile-bav-container"
+  [ngClass]="{ 'active-nav': mobileNavState, 'inActive-nav': !mobileNavState }"
+>
+  <!-- <div class="navigation-mobile-container"> -->
+  <div>
+    <div class="menu-header">
+      <h3>Menu</h3>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        (click)="closeNav()"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </div>
+    <ul class="navigation-mobile">
+      <!-- about -->
+      <div>
+        <li
+          class="nav-li-container"
+          [ngClass]="{ active: subNavaboutusActive }"
+        >
+          <!-- dropdown menu box -->
+          <ul class="drop-down">
+            <!-- dropdown menu -->
+            <li>
+              <a (click)="closeNav()" routerLink="about/what-we-do"
+                >What We Do</a
+              >
+            </li>
+            <li>
+              <a (click)="closeNav()" routerLink="about/our-team">Our Team</a>
+            </li>
+            <li>
+              <a (click)="closeNav()" routerLink="about/awards">Awards</a>
+            </li>
+          </ul>
+          <!-- #fff -->
+          <div (click)="activateSubNav('aboutus')" class="nav-list">
+            <span class="nav-initial-link">About Us</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </li>
+
+        <!-- research -->
+        <li
+          [ngClass]="{ active: subNavresearchActive }"
+          class="nav-li-container"
+        >
+          <!-- dropdown menu box -->
+          <ul class="drop-down">
+            <!-- dropdown menu -->
+            <li>
+              <a (click)="closeNav()" routerLink="research/about-research"
+                >About Research</a
+              >
+            </li>
+            <li>
+              <a (click)="closeNav()" routerLink="research/research-reports"
+                >Research Reports</a
+              >
+            </li>
+          </ul>
+          <!-- #fff -->
+          <div (click)="activateSubNav('research')" class="nav-list">
+            <span class="nav-initial-link">Research</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </li>
+
+        <!-- brokerage -->
+        <li
+          [ngClass]="{ active: subNavbrokerageActive }"
+          class="nav-li-container"
+        >
+          <!-- dropdown menu box -->
+          <ul class="drop-down">
+            <!-- dropdown menu -->
+            <li>
+              <a (click)="closeNav()" routerLink="brokerage/about-brokerage"
+                >About Brokerage</a
+              >
+            </li>
+            <li>
+              <a
+                (click)="closeNav()"
+                routerLink="brokerage/brokerage-services-agreements"
+                >Service Agreements</a
+              >
+            </li>
+          </ul>
+          <!-- #fff -->
+          <div (click)="activateSubNav('brokerage')" class="nav-list">
+            <span class="nav-initial-link">Brokerage</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </li>
+
+        <!-- Investments -->
+        <li
+          [ngClass]="{ active: subNavinverstmentsActive }"
+          class="nav-li-container"
+        >
+          <!-- dropdown menu box -->
+          <ul class="drop-down">
+            <!-- dropdown menu -->
+            <li>
+              <a (click)="closeNav()" routerLink="investments/about-investments"
+                >About Inverstments</a
+              >
+            </li>
+            <li>
+              <a (click)="closeNav()" routerLink="investments/e-books"
+                >E-books</a
+              >
+            </li>
+          </ul>
+
+          <!-- #fff -->
+          <div (click)="activateSubNav('inverstments')" class="nav-list">
+            <span class="nav-initial-link">Inverstments</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </li>
+
+        <!-- Inverstments Banking -->
+        <li
+          [ngClass]="{ active: subNavinverstmentbankingActive }"
+          class="nav-li-container"
+        >
+          <!-- dropdown menu box -->
+          <ul class="drop-down">
+            <!-- dropdown menu -->
+            <li>
+              <a
+                (click)="closeNav()"
+                routerLink="investments-banking/about-investments-banking"
+                >About Investments Banking</a
+              >
+            </li>
+
+            <li>
+              <a
+                (click)="closeNav()"
+                routerLink="investments-banking/investments-banking-transactions"
+                >Transactions</a
+              >
+            </li>
+          </ul>
+          <div (click)="activateSubNav('inverstmentbanking')" class="nav-list">
+            <span class="nav-initial-link" routerLink="investments-banking"
+              >Inverstment Banking</span
+            >
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+
+  <!-- green button -->
+  <div class="green-btn-container">
+    <span (click)="switchToSbmitForm()" class="button-link-green"
+      >Subscribe</span
+    >
+  </div>
+  <!-- </div> -->
+</div>

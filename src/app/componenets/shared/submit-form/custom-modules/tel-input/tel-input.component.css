@@ -1,7 +1,7 @@
 span {
   opacity: 0;
-
   transition: opacity 200ms;
+  display: none;
 }
 
 :host.floating span {
@@ -10,12 +10,13 @@ span {
 
 .iti {
   width: 100%;
-
   max-width: 100%;
 }
 
 input {
   border: none;
+  position: relative;
+  z-index: 1;
 }
 
 ::ng-deep .iti.iti--allow-dropdown input {
