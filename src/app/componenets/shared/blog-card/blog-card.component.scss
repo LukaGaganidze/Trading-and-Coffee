@@ -8,6 +8,7 @@
   display: block;
   text-decoration: none;
   background-color: a.$blog-card-hover;
+  cursor: default;
 
   & a,
   & a:link,
@@ -21,7 +22,6 @@
   padding: 2rem;
   border: a.$form-border-colod solid 1px;
   border-radius: 1rem;
-  cursor: pointer;
 
   &:hover {
     background-color: a.$blog-card-hover;
