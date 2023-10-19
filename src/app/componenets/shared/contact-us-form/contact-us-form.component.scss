@@ -74,9 +74,8 @@
 }
 
 // green button
-.button-link-green,
-.button-link-green:link,
-.button-link-green:visited {
+
+.button-link-green {
   display: block;
   padding: 1.7rem 2rem;
   border-radius: 0.5rem;
@@ -91,11 +90,19 @@
   text-align: center;
   font-size: b.$font-size-sub-heading;
   text-transform: uppercase;
+  cursor: pointer;
+  border: none;
 }
 .button-link-green:hover,
 .button-link-green:active {
   background-color: a.$main-color-green-shade;
   color: a.$main-color-white;
+}
+
+.button-link-green:disabled {
+  background-color: a.$imput-color;
+  color: a.$main-color-white;
+  cursor: not-allowed;
 }
 
 @media (max-width: 950px) {

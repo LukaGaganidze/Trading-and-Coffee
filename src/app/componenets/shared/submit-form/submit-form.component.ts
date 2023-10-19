@@ -33,14 +33,14 @@ export class SubmitFormComponent implements OnInit, OnDestroy {
         Validators.minLength(2),
       ]),
       email: new FormControl(null, [Validators.required, Validators.email]),
-      industry: new FormControl('industry', [Validators.required]),
-      country: new FormControl('country', [
+      industry: new FormControl(null, [Validators.required]),
+      country: new FormControl(null, [
         Validators.required,
         Validators.minLength(3),
       ]),
       company: new FormControl(null, [Validators.required]),
       position: new FormControl(null, [Validators.required]),
-      phoneNumber: new FormControl(''),
+      phonenumber: new FormControl(null, [Validators.required]),
 
       // Checkboxes
       checkboxes: new FormArray(
@@ -68,7 +68,8 @@ export class SubmitFormComponent implements OnInit, OnDestroy {
   }
 
   onSubmition() {
-    console.log(this.submitionForm.valid);
+    console.log(this.submitionForm);
+    // this.submitionForm.reset();
   }
 
   closeForm() {

@@ -20,6 +20,11 @@ export class ResearchLandingComponent implements OnInit {
 
   ngOnInit(): void {
     this.researchArray = this.resService.arrayForResearchLandingPage;
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Enable smooth scrolling
+    });
   }
 
   onNavigateToReports() {

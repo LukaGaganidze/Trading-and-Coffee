@@ -13,16 +13,17 @@
 
   & ul {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     list-style: none;
-    align-items: center;
+    column-gap: 2rem;
+    // align-items: center;
 
     & h3 {
       letter-spacing: 1px;
     }
 
     & img {
-      width: 50%;
+      width: 17rem;
       height: auto;
     }
   }
@@ -221,9 +222,7 @@
 @media (max-width: 400px) {
   .main-footer {
     & img {
-      width: 100%;
       margin-bottom: 1rem;
-      transform: translateX(50%);
     }
     & ul {
       padding: 0;

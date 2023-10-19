@@ -1,6 +1,6 @@
 <app-page-hero
   [backgrounUrl]="'../../../../assets/about/our-team/hero/hero.jpg'"
-  [buttonContent]="'SUBSCRIBE'"
+  [buttonContent]="''"
   [inputLink]="''"
 >
   <h2>Our Team</h2>
@@ -10,4 +10,8 @@
     Our team members are united by a shared passion for delivering superior
     financial solutions and unmatched client service.
   </p>
+
+  <span (click)="openSubscriptionForm()" class="button-link-green"
+    >Subscribe</span
+  >
 </app-page-hero>

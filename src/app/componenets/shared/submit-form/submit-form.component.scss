@@ -66,15 +66,31 @@
   gap: 2.5rem;
 
   padding: 2rem;
+  //
 
   & input,
   & select {
     padding: 1.7rem;
     font-size: b.$font-size-sub-heading;
     color: a.$imput-color;
-    border: solid a.$imput-color-placeholder 1px;
+    border: solid #808080 1px;
     border-radius: 0.4rem;
     outline: none;
+  }
+
+  & input.ng-touched.ng-invalid,
+  & select.ng-touched.ng-invalid {
+    border: solid red 1px;
+  }
+
+  & input:focus,
+  & select:focus {
+    box-shadow: inset 0px 0px 0px 1px #3f51b5;
+  }
+
+  & input:focus.ng-touched.ng-invalid,
+  & select:focus.ng-touched.ng-invalid {
+    box-shadow: inset 0px 0px 0px 1px red;
   }
 
   & input:focus,
@@ -84,6 +100,7 @@
     outline: none;
     border: solid a.$imput-color-placeholder 1px;
   }
+
   & input:hover,
   & select:hover,
   & input:active,

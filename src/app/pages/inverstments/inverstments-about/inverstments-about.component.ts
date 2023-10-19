@@ -12,5 +12,10 @@ export class InverstmentsAboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.itemsContent = INVERSTMETN_ITEMS;
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Enable smooth scrolling
+    });
   }
 }

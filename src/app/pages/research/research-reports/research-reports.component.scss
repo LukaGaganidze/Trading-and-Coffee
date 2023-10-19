@@ -11,6 +11,30 @@
   line-height: 25px;
 }
 
+// green button
+.button-link-green {
+  display: block;
+  padding: 1.4rem 2rem;
+  border-radius: 0.5rem;
+  background-color: a.$main-color-green;
+  color: a.$main-color-white;
+  text-decoration: none;
+  transition: all 0.4s;
+  display: block;
+  width: max-content;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: b.$font-size-sub-heading;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button-link-green:hover,
+.button-link-green:active {
+  background-color: a.$main-color-green-shade;
+  color: a.$main-color-white;
+}
+
 @media (max-width: 950px) {
   .hero-heading {
     font-size: b.$font-size-heading-950;
@@ -19,6 +43,10 @@
     font-size: b.$font-size-sub-heading-950;
     max-width: 80%;
     line-height: 25px;
+  }
+
+  .button-link-green {
+    font-size: b.$font-size-sub-heading-950;
   }
 }
 @media (max-width: 750px) {
@@ -30,6 +58,9 @@
     max-width: 80%;
     line-height: 18px;
   }
+  .button-link-green {
+    font-size: b.$font-size-sub-heading-750;
+  }
 }
 @media (max-width: 500px) {
   .hero-heading {
@@ -39,6 +70,10 @@
     font-size: b.$font-size-sub-heading-500;
     max-width: 100%;
   }
+  .button-link-green {
+    font-size: b.$font-size-sub-heading-500;
+    padding: 0.5rem 1.5rem;
+  }
 }
 @media (max-width: 400px) {
   .hero-heading {
@@ -47,5 +82,8 @@
   .hero-sub-heading {
     font-size: b.$font-size-sub-heading-400;
     max-width: 100%;
+  }
+  .button-link-green {
+    font-size: b.$font-size-sub-heading-400;
   }
 }

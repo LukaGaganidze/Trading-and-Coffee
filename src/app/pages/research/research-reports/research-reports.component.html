@@ -3,7 +3,7 @@
   [backgrounUrl]="
     '../../../../assets/research/all-researches/all-researchs-hero.jpg'
   "
-  [buttonContent]="'SUBSCRIBE'"
+  [buttonContent]="''"
   [inputLink]="''"
 >
   <h2 class="hero-heading">In-Depth Research Analyses</h2>
@@ -13,6 +13,10 @@
     and sector-specific research to gain a profound understanding of current
     trends and developments.
   </p>
+
+  <span (click)="openSubscriptionForm()" class="button-link-green"
+    >Subscribe</span
+  >
 </app-page-hero>
 
 <!-- content -->

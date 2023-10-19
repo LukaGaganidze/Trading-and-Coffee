@@ -1,9 +1,7 @@
 @use "../../../../global-styles/abstracts" as a;
 @use "../../../../global-styles/base" as b;
 // green button
-.button-link-green,
-.button-link-green:link,
-.button-link-green:visited {
+.button-link-green {
   display: block;
   padding: 1.7rem 2rem;
   border-radius: 0.5rem;
@@ -12,6 +10,7 @@
   width: max-content;
   text-decoration: none;
   transition: all 0.4s;
+  cursor: pointer;
 }
 .button-link-green:hover,
 .button-link-green:active {

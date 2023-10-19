@@ -26,6 +26,11 @@ export class InverstmentsEBooksComponent implements OnInit {
     this.eBooksSer.liveEBooksData.subscribe(
       (ebooks) => (this.eBooksData = ebooks)
     );
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Enable smooth scrolling
+    });
   }
 
   onPageChange(page: number) {

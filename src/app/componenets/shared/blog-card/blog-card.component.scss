@@ -4,11 +4,10 @@
 // $imput-color
 // $form-border-colod
 
-.card,
-.card:link,
-.card:visited {
+.card {
   display: block;
   text-decoration: none;
+  background-color: a.$blog-card-hover;
 
   & a,
   & a:link,

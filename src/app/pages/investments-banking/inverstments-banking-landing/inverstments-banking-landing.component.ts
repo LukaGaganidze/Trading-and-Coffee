@@ -13,5 +13,10 @@ export class InverstmentsBankingLandingComponent implements OnInit {
 
   ngOnInit(): void {
     this.itemData = LANDING_PAGE_DATA;
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Enable smooth scrolling
+    });
   }
 }

@@ -1,29 +1,45 @@
-<form class="sub-form">
+<form (ngSubmit)="formSubmition()" [formGroup]="contactUsForm" class="sub-form">
   <h5>Contact Us</h5>
   <!-- first name -->
-  <input placeholder="First Name" id="firstname" type="text" />
-
-  <!-- last name -->
-  <input placeholder="Last Name" id="lastName" type="text" />
-
-  <!-- email -->
-  <input placeholder="example@email.com" id="email" type="email" />
-
-  <!-- phone -->
   <input
-    type="tel"
-    id="phone"
-    autocomplete="off"
-    name="phone"
-    placeholder="Phone"
+    formControlName="firstname"
+    placeholder="First Name"
+    id="firstname"
+    type="text"
   />
 
+  <!-- last name -->
+  <input
+    formControlName="lastname"
+    placeholder="Last Name"
+    id="lastName"
+    type="text"
+  />
+
+  <!-- email -->
+  <input
+    formControlName="email"
+    placeholder="example@email.com"
+    id="email"
+    type="email"
+  />
+
+  <!-- phone -->
+  <input formControlName="phone" id="phone" name="phone" placeholder="Phone" />
+
   <!-- industry -->
-  <select>
-    <option value="sample">Industry</option>
+  <select formControlName="industry">
+    <!-- <option value="" disabled selected>Select an Industry</option> -->
+    <option value="null" disabled="true" [selected]="true">Industry</option>
     <option value="sample">Sample Industry</option>
     <option value="other">Other</option>
   </select>
 
-  <a class="button-link-green" routerLink="#">Submit</a>
+  <button
+    [disabled]="contactUsForm.invalid"
+    type="submit"
+    class="button-link-green"
+  >
+    {{ submitted ? "Submitted" : "Submit" }}
+  </button>
 </form>

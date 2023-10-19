@@ -5,8 +5,8 @@
 
 <app-page-hero
   [backgrounUrl]="'../../../../assets/about/landingPage/hero.jpg'"
-  [buttonContent]="'SUBSCRIBE FOR UPDATES'"
-  [inputLink]="'SUBSCRIBE FOR UPDATES'"
+  [buttonContent]="''"
+  [inputLink]="''"
 >
   <!-- content of the hero -->
   <h2>What We Do</h2>
@@ -16,4 +16,8 @@
     partner, we offer a comprehensive suite of solutions designed to help you
     achieve your financial goals and secure your future.
   </p>
+
+  <span (click)="openSubscriptionForm()" class="button-link-green"
+    >Subscribe</span
+  >
 </app-page-hero>

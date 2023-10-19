@@ -33,6 +33,9 @@
 }
 
 @media (max-width: 950px) {
+  .coantainer {
+    display: none;
+  }
   .content {
     padding: 7rem 0;
     & h2 {
